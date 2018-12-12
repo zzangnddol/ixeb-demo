@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="./../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="./../ixeb/asset/js/config.js"></script>
     <script type="text/javascript" src="./../ixeb/lib/ixebBase.min.js"></script>
+    <script type="text/javascript" src="../common/common.js"></script>
 	<!-- From here, enter your script and style. -->
 	<script type="text/javascript">
 	function onInitScreen_body() {
@@ -31,7 +32,7 @@
         ixeb.comm.transaction({
           "in": ['dataset1=>' + dataset1.serviceId],
           "out": [dataset1.serviceId + '=>dataset1'],
-          "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+          "url": IXEB_SERVICE_URL
         }).done(function(r) {
           console.log("Success.");
           var value = "조회건수 : 총 ( " + grid1.rowCount + " ) 건";
@@ -54,7 +55,7 @@
             ixeb.comm.transaction({
               "in": ['dataset1=>' + dataset1.serviceId],
               "out": [dataset1.serviceId + '=>dataset1'],
-              "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+              "url": IXEB_SERVICE_URL
             }).done(function(r) {
                 console.log("Success.");
             }).fail(function(r) {
@@ -79,7 +80,7 @@
       ixeb.comm.transaction({
           "in": ['dataset0=>' + dataset0.serviceId],
           "out": [dataset0.serviceId + '=>dataset0'],
-          "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+          "url": IXEB_SERVICE_URL
       }).done(function(r) {
           console.log("Success.");
           var value = "조회건수 : 총 ( " + grid0.rowCount + " ) 건";

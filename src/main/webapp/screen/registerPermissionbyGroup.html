@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="./../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
 	<script type="text/javascript" src="./../ixeb/asset/js/config.js"></script>
 	<script type="text/javascript" src="./../ixeb/lib/ixebBase.min.js"></script>
+    <script type="text/javascript" src="../common/common.js"></script>
 	<!-- From here, enter your script and style. -->
 	<script type="text/javascript">
 	var userId, upMenuId, menuId;
@@ -29,14 +30,14 @@
         ixeb.comm.transaction({
           "in": ['dataset5=>' + dataset5.serviceId],
         //   "out": [dataset5.serviceId + '=>dataset5'],
-          "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+          "url": IXEB_SERVICE_URL
         }).done(function(r) {
             dataset5.clearData();
             console.log('Success.');
             // ixeb.comm.transaction({
             //   "in": ['dataset6=>' + dataset6.serviceId],
             // //   "out": [dataset6.serviceId + '=>dataset6'],
-            //   "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            //   "url": IXEB_SERVICE_URL
             // }).done(function(r) {
             //     console.log("Success.");
             // }).fail(function(r) {
@@ -109,7 +110,7 @@
         ixeb.comm.transaction({
           //"in": ['dataset3=>' + dataset3.serviceId],
           "out": [dataset3.serviceId + '=>dataset3'],
-          "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+          "url": IXEB_SERVICE_URL
         }).done(function(r) {
             console.log("Success.");
             grid3.redraw();
@@ -126,7 +127,7 @@
         ixeb.comm.transaction({
           //"in": ['dataset4=>' + dataset4.serviceId],
           "out": [dataset4.serviceId + '=>dataset4'],
-          "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+          "url": IXEB_SERVICE_URL
         }).done(function(r) {
             var value = "조회건수 : 총 ( " + grid4.rowCount + " ) 건";
             grid4.getColumn(0).footer().setText(value);
@@ -150,7 +151,7 @@
         ixeb.comm.transaction({
           "in": ['dataset2=>' + dataset2.serviceId],
           "out": [dataset2.serviceId + '=>dataset2'],
-          "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+          "url": IXEB_SERVICE_URL
         }).done(function(r) {
             console.log("Success.");
             grid3.clearAll();
@@ -175,7 +176,7 @@
         ixeb.comm.transaction({
           "in": ['dataset1=>' + dataset1.serviceId],
           "out": [dataset1.serviceId + '=>dataset1'],
-          "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+          "url": IXEB_SERVICE_URL
         }).done(function(r) {
             console.log("Success.");
             grid2.clearAll();
@@ -197,7 +198,7 @@
         ixeb.comm.transaction({
           "in": ['dataset0=>' + dataset0.serviceId],
           "out": [dataset0.serviceId + '=>dataset0'],
-          "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+          "url": IXEB_SERVICE_URL
         }).done(function(r) {
             console.log("Success.");
         }).fail(function(r) {

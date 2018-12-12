@@ -23,6 +23,7 @@
     <script type="text/javascript" src="../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="../ixeb/asset/js/config.js"></script>
     <script type="text/javascript" src="../ixeb/lib/ixebBase.min.js"></script>
+    <script type="text/javascript" src="../common/common.js"></script>
     <script type="text/javascript">
         
         //저장 버튼 
@@ -30,7 +31,7 @@
             ixeb.comm.transaction({
                 "in": ['dataset0=>' + dataset0.serviceId],
                 "out": [dataset0.serviceId + '=>dataset0'],
-                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+                "url": IXEB_SERVICE_URL
             }).done(function(r) {
                 console.log("Success.");
             }).fail(function(r) {
@@ -50,7 +51,7 @@
             ixeb.comm.transaction({
                 "in": ['dataset0=>' + dataset0.serviceId],
                 "out": [dataset0.serviceId + '=>dataset0'],
-                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+                "url": IXEB_SERVICE_URL
             }).done(function(r) {
                 console.log("Success.");
             }).fail(function(r) {
@@ -99,7 +100,7 @@
             ixeb.comm.transaction({
                 "in": ['dataset0=>' + dataset0.serviceId],
                 "out": [dataset0.serviceId + '=>dataset0'],
-                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+                "url": IXEB_SERVICE_URL
             }).done(function(r) {
                 console.log("Success.");
             }).fail(function(r) {

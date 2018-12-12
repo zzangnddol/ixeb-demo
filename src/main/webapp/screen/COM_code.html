@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="../ixeb/asset/js/config.js"></script>
     <script type="text/javascript" src="../ixeb/lib/ixebBase.min.js"></script>
+    <script type="text/javascript" src="../common/common.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/reset.css">
     <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/control.css">
@@ -218,7 +219,7 @@
         ixeb.comm.transaction({
             "in": ['dataset0=>' + dataset0.serviceId],
             "out": [dataset0.serviceId + '=>dataset0'],
-            "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            "url": IXEB_SERVICE_URL
         }).done(function (r) {
             console.log(".SUCCESS");
         }).fail(function (r) {
@@ -232,7 +233,7 @@
         ixeb.comm.transaction({
             "in": ['dataset0=>' + dataset0.serviceId],
             "out": [dataset0.serviceId + '=>dataset0'],
-            "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            "url": IXEB_SERVICE_URL
         }).done(function(r) {
             onclick_btn_search();
         }).fail(function(r) {
@@ -270,7 +271,7 @@
         ixeb.comm.transaction({
             "in": ['dataset1=>' + dataset1.serviceId],
             "out": [dataset1.serviceId + '=>dataset1'],
-            "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            "url": IXEB_SERVICE_URL
         }).done(function (r) {
             combotopcode.clearAll();
             var datas = JSON.parse(r.xhr.responseText)
@@ -291,7 +292,7 @@
         ixeb.comm.transaction({
             "in": ['dataset1=>' + dataset1.serviceId],
             "out": [dataset1.serviceId + '=>dataset1'],
-            "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            "url": IXEB_SERVICE_URL
         }).done(function(r) {
             onclick_btn_topSearch();
         }).fail(function(r) {
