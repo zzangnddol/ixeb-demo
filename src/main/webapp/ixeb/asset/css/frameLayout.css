@@ -1,0 +1,415 @@
+* {
+    font-family: '나눔고딕';
+}
+
+.wrapper {
+    padding: 0;
+    min-height: 850px;
+}
+
+header {
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('./../../themes/indiTexi/img/header_bg.png');
+    background-repeat: repeat-x;
+}
+
+header > div:first-child {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.logo_container {
+    margin-right: 10px;
+}
+
+.site_title_container > a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.header_menu {
+    margin-left: 30px;
+}
+
+.header_menu > li {
+    float: left;
+    margin: 0 10px;
+    padding: 0 10px;
+    color: #ccc;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.header_menu > li > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.user_name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff8400;
+}
+
+.logout_button {
+    margin: 0 10px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 12px;
+}
+
+.tab_container {
+    position: absolute;
+    width: 100%;
+    height: calc(100% + 26px);
+    left: 0;
+    top: -26px;
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+    z-index: 333;
+    display: none;
+}
+
+/* side menu */
+section {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 89px);
+}
+
+section > aside {
+    position: absolute;
+    width: 228px;   
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    z-index: 500;
+}
+
+section > article {
+    position: relative;
+    width: calc(100% - 228px);
+    height: calc(100% - 30px);
+    margin: 0 auto;
+    float: right;
+}
+
+.bg_container {
+    width: 100%;
+    height: 30px;
+    background-image: url('./../../themes/indiTexi/img/main_bg.png');
+    border-bottom: 1px solid #ccc
+}
+
+.arrow_button {
+    height: 100%;
+    background-color: #d5d5d7;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    color: #333;
+    box-sizing: border-box;
+    padding: 0 2px;
+}
+
+.arrow_right_button {
+    width: 10px;
+    float: left;
+}
+
+.aside_main {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf1f4
+}
+
+.aside_main_top {
+    flex: 1 1 auto;
+}
+
+.relative_container {
+    position: relative;
+    height: 100px;
+    margin-top: 16px;
+}
+
+.aside_badge {
+    position: absolute;
+    width: calc(100% - 5px);
+    height: 100px;
+    right: -7px;
+    top: 0;
+    background-image: url('./../../themes/indiTexi/img/bg_pink.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.badge_dateTime {
+    margin-top: 20px;
+    padding-left: 24px;
+}
+
+.badge_dateTime > i-text {
+    font-size: 12px;
+    color: white;
+}
+
+.badge_loggingUser {
+    padding-left: 24px;
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.badge_loggingUser > i-text {
+    color: white;
+    padding: 4px 0;
+}
+
+.badge_loggingUser > i-text:first-child {
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+}
+
+.badge_loggingUser > i-text:last-child {
+    margin-left: 15px;
+}
+
+.badge_loggingUser > i-text:first-child::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 31px;
+    left: 0;
+    background-image: url('./../../themes/indiTexi/img/ico3.png');
+}
+
+.aside_button_container {
+    width: 100%;
+    padding: 0 5 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.aside_button_container li {
+    text-align: center;
+}
+
+.aside_button_container li:first-child {
+    position: relative;
+    width: 55%;
+}
+
+.aside_button_container li:last-child {
+    width: 45%;
+}
+
+.aside_button_container li:first-child::after {
+    position: absolute;
+    right: 0;
+    top: 25%;
+    content: '|';
+    font-size: 12px;
+    color: #666;
+}
+
+.aside_button_container > li > i-button {
+    background: none;
+    border:none;
+    font-size: 12px;
+}
+
+.aside_menu {
+    margin-top: 10px;
+}
+
+.aside_menu .aside_menu_title {
+    width: 96%;
+    height: 30px;
+    margin: auto;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.aside_menu .aside_menu_title .menu_title {
+    position: relative;
+    font-size: 12px;
+    padding-left: 18px;
+}
+
+.todaySchedule::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    background-image: url('./../../themes/indiTexi/img/ico5.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.toDo::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    background-image: url('./../../themes/indiTexi/img/ico6.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.aside_menu .aside_menu_btn {
+    height: 16px;
+    padding: 2;
+    font-size:10px !important;
+}
+
+.empty_box {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #666666;
+}
+
+.empty_box > div {
+    font-size: 12px;
+    text-align: center;
+}
+
+.empty_box > div > strong {
+    font-weight: bold;
+}
+
+.empty_box > p {
+    margin-top: 5px;
+    width: 100%;
+    font-size: 11px;
+    text-align: center;
+}
+
+.aside_main_button_container {
+    text-align: center;
+}
+
+.aside_main_button_container > i-button {
+    width: 96%;
+    height: 50px;
+    padding: 30px;
+    margin: 5px 0;
+}
+
+.aside_main_button_container > i-button > span {
+    position: relative;
+    width: 100%;
+    padding-left: 35px;    
+}
+
+.aside_main_button_container > i-button:first-child > span::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 0;
+    top: -5px;
+    background-image: url('./../../themes/indiTexi/img/ico7.png');
+}
+
+.aside_main_button_container > i-button:last-child > span::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 18px;
+    left: 0;
+    top: 5px;
+    background-image: url('./../../themes/indiTexi/img/ico8.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.aside_main_button_container > i-button:last-child .texi_number > span {
+    color: #ff8400;
+}
+
+.list_container {
+    width: 96%;
+    margin: 0 auto;
+    background-color: white;
+    border-bottom: 1px solid #b2b2b2;
+    display: none;
+}
+
+.list_container > div {
+    height: 22px;
+    background-image: url('./../../themes/indiTexi/img/bg2.png');
+    background-repeat: repeat-x;
+    line-height: 22px;
+    text-align: right;
+}
+
+.list_container > div > button {
+    border: none;
+    background: none;
+    width: 20px;
+    height: 20px;
+    outline: none;
+}
+
+.list_container > ul > li {
+    padding: 5px 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.list_container > ul > li:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.list_container > div > button > img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+footer {
+    position: relative;
+    height: 33px;
+    padding: 0 10px;
+    border-top: 1px solid #333;
+    box-sizing: border-box;
+}
+
+.status {
+    position: absolute;
+    height: 33px;
+    line-height: 33px;
+    top: 0;
+    left: 10px;
+    bottom: 0;
+}
+
+footer .root_container {
+    width: 100%;
+}

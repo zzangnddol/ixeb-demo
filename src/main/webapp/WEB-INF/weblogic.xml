@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-web-app>
+<context-root>/ixeb-manager</context-root>
+  <jsp-descriptor>
+    <encoding>UTF-8</encoding>
+  </jsp-descriptor>
+  <container-descriptor>
+    <prefer-web-inf-classes>true</prefer-web-inf-classes>
+  </container-descriptor>
+  <container-descriptor>
+    <prefer-application-packages>
+	  <package-name>com.inzent.*</package-name>
+	  <package-name>org.springframework.*</package-name>
+	  <package-name>org.apache.log4j.*</package-name>
+	  <package-name>org.apache.ibatis.*</package-name>
+	</prefer-application-packages>
+  </container-descriptor>
+  <charset-params>
+    <input-charset>
+	  <resource-path>/*</resource-path>
+	  <java-charset-name>UTF-8</java-charset-name>
+	</input-charset>
+  </charset-params>
+</weblogic-web-app>

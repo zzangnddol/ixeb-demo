@@ -1,0 +1,90 @@
+        * {
+            box-sizing: border-box;
+        }
+        
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            /* display: flex;
+            align-items: center;
+            justify-content: center;
+            display: -webkit-flex;
+            -webkit-justify-content: center; */
+        }
+        
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -300px;
+            margin-top: -200px;
+            width: 600px;
+            /* height: 350px; */
+            border: solid 3px #045FB4;
+            border-radius: 6px;
+            background-color: white;
+        }
+        
+        .top {
+            width: 600px;
+            height: 60px;
+            padding: 40px;
+        }
+        
+        .center {
+            width: 595px;
+            /* height: 192px; */
+        }
+        
+        .bottom {
+            width: 594px;
+            height: 55px;
+            background-color: #F2F2F2;
+            display: table;
+        }
+        
+        .button {
+            display: table-cell;
+            vertical-align: middle;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        #text0 {
+            font-size: 25px;
+            color: #449EDF;
+            font-weight: bold;
+        }
+        
+        #text1,
+        #text2,
+        #text3 {
+            color: #449EDF;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 0px 30px;
+            width: 30%;
+        }
+        
+        #button0,
+        #button1 {
+            width: 70px;
+            height: 30px;
+            border-radius: 6px;
+            color: white;
+            background-color: #848484;
+            font-size: 16px;
+            margin-left: 15px;
+        }
+        
+        
+        .box1 {
+            padding: 0px 20px;
+        }
+
+        .message-box{
+            padding: 10px 130px 10px 150px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #ff4400;
+        }

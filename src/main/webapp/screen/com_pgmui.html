@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="iXebStudio Platform 2.2018.1130.2918">
+    <meta name="ixeb-studio:SaveZOrder" content="undefined">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ixeb-studio:grid-size" content="10x10">
+    <meta name="ixeb-studio:screen-size" content="1280x1024">
+    <meta name="created" content="2018/12/05 14:04">
+    <title>File title</title>
+    <script type="text/javascript" src="../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="../ixeb/asset/js/config.js"></script>
+    <script type="text/javascript" src="../ixeb/lib/ixebBase.min.js"></script>
+    <!-- From here, enter your script and style. -->
+    <script type="text/javascript">
+    function onloadcomplete_dataset0(e, dataset) {
+        //TODO:
+        onDataCellClicked_grid0();
+    }
+    
+    
+    var userID;
+        userID = "test00";
+    function onloadcomplete_dataset1(e, dataset) {
+        //TODO:
+        var footer = grid2.getColumn(0).footer();
+        var group_code = grid1.getCellData(grid1.getFocusedCell().rowIndex, '분류코드');
+            var combo1_value = grid1.getCellData(grid1.getFocusedCell().rowIndex, '분류명');
+            combo1.value = combo1_value;
+            dataset2.setParams({
+                pUpMenuId: group_code
+            });
+            ixeb.comm.transaction({
+                //"in": ['dataset2=>' + dataset2.serviceId],
+                "out": [dataset2.serviceId + '=>dataset2'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                for(var i=0; i<grid2.rowCount; i++) {
+                    grid2.setCellData(i, 4, edit2.value);
+                }
+                var value = "조회건수 : 총 ( " + grid2.rowCount + " ) 건";
+                footer.setText(value);
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+    
+   
+        function onchange_grid1(e) {
+            //TODO:
+            var group_code = grid1.getCellData(grid1.getFocusedCell().rowIndex, '분류코드');
+            var combo1_value = grid1.getCellData(grid1.getFocusedCell().rowIndex, '분류명');
+            combo1.value = combo1_value;
+            dataset2.setParams({
+                pUpMenuId: group_code
+            });
+            ixeb.comm.transaction({
+                "in": ['dataset2=>' + dataset2.serviceId],
+                "out": [dataset2.serviceId + '=>dataset2'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        function onvaluechanged_dataset2(e, dataset, row, column, oldValue, newValue, record) {
+            //TODO:
+            var systemCode = grid1.getCellData(grid1.getFocusedCell().rowIndex, '분류코드');
+            if (column === 'PRT_SEQ') {
+                grid2.setCellData(grid2.getFocusedCell().rowIndex, '프로그램ID', systemCode + newValue);
+            }
+        }
+
+
+        function onclick_button2(e) {
+            //TODO:
+            var footer = grid2.getColumn(0).footer();
+            var group_code = grid1.getCellData(grid1.getFocusedCell().rowIndex, '분류코드');
+            dataset2.setParams({
+                pUpMenuId: group_code
+            });
+            
+            ixeb.comm.transaction({
+                "in": ['dataset2=>' + dataset2.serviceId],
+                "out": [dataset2.serviceId + '=>dataset2'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                for(var i=0; i<grid2.rowCount; i++) {
+                    grid2.setCellData(i, 4, edit2.value);
+                }
+                var value = "조회건수 : 총 ( " + grid2.rowCount + " ) 건";
+                footer.setText(value);
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        function onclick_button0(e) {
+            //TODO:
+            dataset2.setValue(grid2.getFocusedCell().rowIndex, "UP_MENU_ID", grid1.getCellData(grid1.getFocusedCell().rowIndex, 1));
+            dataset2.setValue(grid2.getFocusedCell().rowIndex, "USER_ID", userID);
+            grid2.deleteRow(grid2.getView().focusedRowIndex());
+        }
+
+        function onclick_button1(e) {
+            //TODO:
+            var row = dataset2.appendRow({});
+            grid2.setFocusedCell(row, 0);
+            dataset2.setValue(grid2.getFocusedCell().rowIndex, "UP_MENU_ID", grid1.getCellData(grid1.getFocusedCell().rowIndex, 1));
+            dataset2.setValue(grid2.getFocusedCell().rowIndex, "USER_ID", userID);
+            grid2.setCellData(grid2.getFocusedCell( ).rowIndex , 4 , edit2.value  );
+            grid2.focus();
+        }
+
+        function onDataCellClicked_grid1(e, grid, cell) {
+            //TODO:
+            var footer = grid2.getColumn(0).footer();
+            var group_code = grid1.getCellData(grid1.getFocusedCell().rowIndex, '분류코드');
+            var combo1_value = grid1.getCellData(grid1.getFocusedCell().rowIndex, '분류명');
+            combo1.value = combo1_value;
+            dataset2.setParams({
+                pUpMenuId: group_code
+            });
+            ixeb.comm.transaction({
+                //"in": ['dataset2=>' + dataset2.serviceId],
+                "out": [dataset2.serviceId + '=>dataset2'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                var value = "조회건수 : 총 ( " + grid2.rowCount + " ) 건";
+                footer.setText(value);
+                for(var i=0; i<grid2.rowCount; i++) {
+                    grid2.setCellData(i, 4, edit2.value);
+                }
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        function onDataCellClicked_grid0(e, grid, cell) {
+            //TODO:
+            //console.log(grid0.getFocusedCell( ));
+            var system_code = grid0.getCellData(grid0.getFocusedCell().rowIndex, '시스템코드');
+            var combo0_value = grid0.getCellData(grid0.getFocusedCell().rowIndex, '시스템명');
+            combo0.value = combo0_value;
+            dataset1.setParams({
+                pUpMenuId: system_code
+            });
+            ixeb.comm.transaction({
+                //"in": ['dataset1=>' + dataset1.serviceId],
+                "out": [dataset1.serviceId + '=>dataset1'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        function onInitScreen_body() {
+            //TODO:
+            var footer = grid2.getColumn(0).footer();
+            grid2.getView().footer().setHeight(30);
+            ixeb.comm.transaction({
+                "in": ['dataset0=>' + dataset0.serviceId],
+                "out": [dataset0.serviceId + '=>dataset0'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                footer.setSpanNext(6);
+                footer.styles().setTextAlignment("near");
+                 footer.setStyles({
+                    'background': '#cfd9e2'
+                });
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        
+    </script>
+    <style>
+        th {
+            text-align: left;
+        }
+        
+        .container_top {
+            width: 100%;
+            height: 35%;
+        }
+        
+        .container_bottom {
+            width: 100%;
+            margin-top: 26px;
+            height: calc(65% - 26px);
+            float: left;
+        }
+        
+        .grid0_container,
+        .grid1_container {
+            width: 50%;
+            height: 100%;
+            float: left;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        
+        .grid_wrapper {
+            float: left;
+            width: 55%;
+            height: 60%;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 5px;
+        }
+        
+        .table_wrapper {
+            float: left;
+            width: 45%;
+            height: 100%;
+            padding: 5px 5px 5px 5px;
+        }
+        h1 {
+            font-weight: bold;
+        }
+        i-combo, i-edit, i-spinner {
+            
+            width: 70%;
+        }
+        
+        .table_container {
+            padding-top: 5px;
+        }
+
+        span.ui-spinner {
+            width: 100% !important;
+        }
+    </style>
+    <!-- stylesheet"-->
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/reset.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/control.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/common.css">
+    <i-dataset id="dataset0" serviceId="service_com_pgmui01" onloadcomplete="onloadcomplete_dataset0(arguments[0], arguments[1].dataset)">
+        <header>
+            [{"id":"MENU_ID","object":"","type":"","size":"","desc":""},{"id":"MENU_BM","object":"","type":"","size":"","desc":""}]
+        </header><data>
+                                                	[]
+                                                </data>
+        <i-bind bindtype="recordset" property="" target="grid0" column=""></i-bind>
+        <i-bind bindtype="recordset" property="value" target="combo0" column="MENU_BM"></i-bind>
+    </i-dataset>
+    <i-dataset id="dataset1" serviceId="service_com_pgmui02" onloadcomplete="onloadcomplete_dataset1(arguments[0], arguments[1].dataset)">
+        <header>
+            [{"id":"MENU_TYPE","object":"edit","type":"","size":"","desc":"item0"},{"id":"MENU_ID","object":"edit","type":"","size":"","desc":"item1"},{"id":"MENU_BM","object":"edit","type":"","size":"","desc":"item2"}]
+        </header><data>
+                                                	[]
+                                                </data>
+        <i-bind bindtype="recordset" property="" target="grid1" column=""></i-bind>
+        <i-bind bindtype="recordset" property="value" target="combo1" column="MENU_BM"></i-bind>
+    </i-dataset>
+    <i-dataset id="dataset2" serviceId="service_com_pgmui03" onvaluechanged="onvaluechanged_dataset2(arguments[0], arguments[1].dataset, arguments[1].row, arguments[1].col, arguments[1].oldValue, arguments[1].newValue, arguments[1].record)" >
+        <header>
+            [{"id":"PRT_SEQ","object":"edit","type":"","size":"","desc":"item0"},{"id":"MENU_TYPE","object":"edit","type":"","size":"","desc":"item1"},{"id":"MENU_ID","object":"edit","type":"","size":"","desc":"item2"},{"id":"MENU_BM","object":"edit","type":"","size":"","desc":"item3"},{"id":"USEYN","object":"edit","type":"","size":"","desc":"item4"},{"id":"UP_MENU_ID","object":"edit","type":"","size":"","desc":"item5"}]
+        </header><data>
+                                                        	[]
+                                                        </data>
+        <i-bind bindtype="recordset" property="" target="grid2" column=""></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit1" column="MENU_BM"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="combo2" column="MENU_TYPE"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="combo3" column="USEYN"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit4" column="PRT_SEQ"></i-bind>
+    </i-dataset>
+</head>
+
+<body onInitScreen="onInitScreen_body()">
+    <div class="wrapper">
+        <div class="main_title_container">
+            <div class="menu_title">
+                <h1>프로그램등록</h1>
+            </div>
+            <div class="button_container">
+                <!-- 첫번째 버튼은 무조건 class를 red_button으로 지정해주세요. -->
+                <i-button text="삭제" class="red_button" tabIndex="1" onclick="onclick_button0(arguments[0])" id="button0"></i-button>
+                <i-button text="입력" class="blue_button" tabIndex="2" onclick="onclick_button1(arguments[0])" id="button1"></i-button>
+                <i-button style="margin-right: 5px;" text="저장" class="blue_button" tabIndex="3" id="button2" onclick="onclick_button2(arguments[0])"></i-button>
+            </div>
+        </div>
+        <div class="" style="height:calc(100% - 33px)">
+            <div class="container_top">
+                <div class="grid0_container">
+                    <i-grid style="width: 100%; height: 100%" columns="[{'name':'시스템코드','colWidth':180,'fieldName':'MENU_ID','textAlignment':'center'},{'name':'시스템명','colWidth':380,'fieldName':'MENU_BM','textAlignment':'center'}]" id="grid0" columncount="2" initrowcount="0" sumrowshow="none" columnlastextend="true" columnmove="true" columnresize="true" statebar="false" rowautocount="false" strippedpattern="true" sorted="true" griditem="[]" tabIndex="4" onDataCellClicked="onDataCellClicked_grid0(arguments[0], arguments[1], arguments[2])" editable="false" dataFontSize="13" colHeadFontSize="13"></i-grid>
+                </div>
+                <div class="grid1_container">
+                    <i-grid style="width: 100%; height: 100%" columns="[{'name':'레벨','colWidth':100,'fieldName':'MENU_TYPE','textAlignment':'center'},{'name':'분류코드','colWidth':190,'fieldName':'MENU_ID','textAlignment':'center'},{'name':'분류명','colWidth':300,'fieldName':'MENU_BM','textAlignment':'center'}]" id="grid1" columncount="3" initrowcount="0" sumrowshow="none" columnlastextend="true" columnmove="true" columnresize="true" statebar="false" rowautocount="false" strippedpattern="true" sorted="true" griditem="[]" tabIndex="5" onDataCellClicked="onDataCellClicked_grid1(arguments[0], arguments[1], arguments[2])" onchange="onchange_grid1(arguments[0])" onDataSetted="onDataSetted_grid1(arguments[0])" editable="false"></i-grid>
+                </div>
+            </div>
+
+            <div class="container_bottom">
+                <div class="grid_wrapper">
+                    <i-grid style="width: 100%; height: 100%" columns="[{'name':'출력순서','fieldName':'PRT_SEQ','textAlignment':'center'},{'name':'레벨','fieldName':'MENU_TYPE','textAlignment':'center'},{'name':'프로그램ID','colWidth':100,'fieldName':'MENU_ID','textAlignment':'center'},{'name':'프로그램명','colWidth':150,'fieldName':'MENU_BM','textAlignment':'center'},{'name':'디렉토리명','colWidth':200,'textAlignment':'center'},{'name':'최종수정일','colWidth':150,'textAlignment':'center'}]" id="grid2" columncount="6" initrowcount="0" sumrowshow="sum" columnlastextend="true" columnmove="true" columnresize="true" statebar="false" rowautocount="false" strippedpattern="true" sorted="true" griditem="[]" tabIndex="6" editable="false" sumRowTitle=""></i-grid>
+                </div>
+                <div class="table_wrapper">
+                    <div class="sub_title_container">
+                        <div class="menu_title">
+                            <h2>프로그램정보</h2>
+                        </div>
+                    </div>
+                    <div class="table_container">
+                        <table class="common_table" style="width: 100%; height: 100%;">
+                            <colgroup>
+                                <col style="width: 40%">
+                                <col style="width: 60%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>시스템</th>
+                                    <td>
+                                        <i-combo style="width: 70%" id="combo0" items="[]" index="0" tabIndex="7" labelField="MENU_BM" valueField="MENU_BM" readOnly="true"></i-combo>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>상위메뉴</th>
+                                    <td>
+                                        <i-combo style="width: 70%;" id="combo1" items="[]" index="0" tabIndex="8" labelField="MENU_BM" valueField="MENU_BM" readOnly="true"></i-combo>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>레벨</th>
+                                    <td>
+                                        <i-combo style="width: 70%;" id="combo2" items="[{'label':'2레벨','value':'2'},{'label':'3레벨','value':'3'},{'label':'4레벨','value':'4'}]" index="-1" tabIndex="9"></i-combo>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>파일ID</th>
+                                    <td>
+                                        <i-edit style="width: 70%;" id="edit0" value="ebiztrs01p01.swf" tabIndex="10"></i-edit>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        프로그램명</th>
+                                    <td>
+                                        <i-edit style="width: 70%;" id="edit1" value="" tabIndex="11"></i-edit>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        디렉토리명</th>
+                                    <td>
+                                        <i-edit style="width: 70%;" id="edit2" value="/eBiz/order" tabIndex="12"></i-edit>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>페이지 수</th>
+                                    <td>
+                                        <i-spinner style="width: 70%;" id="spinner0" incrementValue="1" value="1" tabIndex="13"></i-spinner>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>사용유무</th>
+                                    <td>
+                                        <i-combo style="width: 70%;" id="combo3" items="[{'label':'Y','value':'Y'},{'label':'N','value':'N'}]" index="0" tabIndex="14" value="Y"></i-combo>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>개발자</th>
+                                    <td>
+                                        <i-edit style="width: 70%;" id="edit3" tabIndex="15" value="이정민"></i-edit>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>진행상태</th>
+                                    <td>
+                                        <i-combo style="width: 70%;" id="combo4" items="[{'label':'설계단계','value':'0'},{'label':'개발단계','value':'1'},{'label':'테스트','value':'2'},{'label':'검수중','value':'3'},{'label':'수정중','value':'4'},{'label':'완료됨','value':'9'}]" index="0" tabIndex="16"></i-combo>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>출력순서</th>
+                                    <td>
+                                        <i-edit style="width: 70%;" id="edit4" value="10" tabIndex="17"></i-edit>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+    <meta name="generator" content="iXebStudio Platform 2.2018.1130.2918">
+    <meta name="ixeb-studio:SaveZOrder" content="undefined">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ixeb-studio:grid-size" content="10x10">
+    <meta name="ixeb-studio:screen-size" content="1280x1024">
+	<meta name="created" content="2018/12/05 18:45">
+	<title>File title</title>
+	<script type="text/javascript" src="./ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="./ixeb/lib/ixebBase.min.js"></script>
+	<!-- From here, enter your script and style. -->
+	<script type="text/javascript">
+	
+	</script>
+	<!-- stylesheet"-->
+	<link rel="stylesheet" type="text/css" href="./ixeb/themes/indiTexi/reset.css">
+	<link rel="stylesheet" type="text/css" href="./ixeb/themes/indiTexi/control.css">
+    <link rel="stylesheet" type="text/css" href="./ixeb/themes/indiTexi/common.css">
+	<link rel="stylesheet" type="text/css" href="./ixeb/asset/css/inquireUserOrderByGroup.css">
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main_title_container">
+            <div class="menu_title">
+                <h1>메인메뉴</h1>
+            </div>
+            <div class="button_container">
+                <i-button text="저장" class="red_button" id="button0" tabIndex="49"></i-button>
+                <i-button text="조회" class="blue_button" id="button1" tabIndex="50"></i-button>
+            </div>
+        </div>
+        <section>
+            <div class="control_container">
+                <div class="sub_title_container">
+                    <div class="menu_title">
+                        <h2>등록그룹</h2>
+                    </div>
+                </div>
+                <div class="grid_container">
+                    <i-grid style="width:100%; height:100%;" columns="[{'name':'column0','headerText':'그룹아이디','colWidth':30},{'name':'column1','headerText':'그룹명'}]" id="grid0" columncount="2" initrowcount="9" sumrowshow="none" columnlastextend="true" columnmove="true" columnresize="true" statebar="false" rowautocount="true" strippedpattern="true" sorted="true" griditem="[]"></i-grid>
+                </div>
+            </div>
+            <div class="control_container">
+                <div class="sub_title_container">
+                    <div class="menu_title">
+                        <h2>그룹별 사용자</h2>
+                    </div>
+                </div>
+                <div class="grid_container">
+                    <i-grid style="width:100%; height:100%;" columns="[{'name':'column0','headerText':'사용자아이디','colWidth':30},{'name':'column1','headerText':'사용자명'}]" id="grid1" columncount="2" initrowcount="9" sumrowshow="none" columnlastextend="true" columnmove="true" columnresize="true" statebar="false" rowautocount="true" strippedpattern="true" sorted="true" griditem="[]"></i-grid>
+                </div>
+            </div>
+            <div class="control_container">
+                <div class="sub_title_container">
+                    <div class="menu_title">
+                        <h2>사용자 정보</h2>
+                    </div>
+                </div>
+                <div class="table_container">
+                    <table class="common_table" style="width: 100%;">
+                        <colgroup>
+                            <col style="width: 40%">
+                            <col style="width: 60%">
+                        </colgroup>
+                        <tbody>
+                            <tr style="height: 35px">
+                                <th>사용자아이디</th>
+                                <td>
+                                    <i-edit tabIndex="1"></i-edit>
+                                </td>
+                            </tr>
+                            <tr style="height: 35px">
+                                <th>사용자명</th>
+                                <td>
+                                    <i-edit tabIndex="1"></i-edit>
+                                </td>
+                            </tr>
+                            <tr style="height: 35px">
+                                <th>사용자그룹</th>
+                                <td>
+                                    <i-combo style="width:140px;" id="combo0" enable="false" tabIndex="17"></i-combo>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="dummy_div">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

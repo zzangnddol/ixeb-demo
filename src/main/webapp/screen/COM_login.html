@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="generator" content="iXebStudio Platform 2.2018.1130.2918">
+	<meta name="ixeb-studio:SaveZOrder" content="undefined">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="ixeb-studio:grid-size" content="10x10">
+	<meta name="ixeb-studio:screen-size" content="1280x1024">
+	<meta name="created" content="2018/12/05 14:09">
+	<title>로그인</title>
+	<script type="text/javascript" src="../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="../ixeb/lib/ixebBase.min.js"></script>
+	<!-- stylesheet"-->
+	<link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/reset.css">
+	<link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/control.css">
+	<link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/common.css">
+	<link rel="stylesheet" href="../ixeb/asset/css/COM_login.css">
+
+	<script>
+		window.onload = function(){
+			$(".login-input").on("click", function(){
+				$(this).find("input").focus();
+			})
+		}
+
+		function action_findInfo() {
+			if ($('.popup_window')) {
+				var openFindUserInfo = '<div class="popup_window">';
+					openFindUserInfo += '<iframe style="width: 100%; height: 100%" src="./Com_userFind.html" scrolling="no"></iframe>';
+				openFindUserInfo += '</div>';
+
+				$('body').prepend(openFindUserInfo);
+			} else {
+				$('.popup_window').show();
+			}
+		}
+
+		function hide_findInfo() {
+			$('.popup_window').hide();
+		}
+	</script>
+</head>
+
+<body>
+	<article id="layer-login">
+		<div id="div-login">
+			<div class="user-authority">
+				<div class="btn-authority active" id="authority-partner">조합원</div>
+				<div class="btn-authority" id="authority-employee">직원</div>
+			</div>
+			<form class="form-login" method="POST" action="../login">
+				<div class="login-left">
+					<div class="login-input user-id">
+						<input type="text" placeholder="사업자등록번호" name="username">
+					</div>
+					<div class="login-input user-pwd">
+						<input type="password" placeholder="비밀번호" name="password">
+					</div>
+				</div>
+				<div class="login-right">
+					<button type="submit" class="btn-submit">로그인</button>
+				</div>
+			</form>
+			<div class="find-pwd">
+				<div class="txt-pwd">비밀번호를 잊으셨나요?</div>
+				<i-button text="비밀번호찾기" class="btn-findpwd" onclick="action_findInfo(arguments[0])"></i-button>
+			</div>
+		</div>
+	</article>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="iXebStudio Platform 2.2018.1130.2918">
+    <meta name="ixeb-studio:SaveZOrder" content="undefined">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ixeb-studio:grid-size" content="10x10">
+    <meta name="ixeb-studio:screen-size" content="1280x1024">
+    <meta name="created" content="2018/12/05 09:01">
+    <title>공통코드관리</title>
+    <script type="text/javascript" src="../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="../ixeb/asset/js/config.js"></script>
+    <script type="text/javascript" src="../ixeb/lib/ixebBase.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/reset.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/control.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/common.css">
+    <link rel="stylesheet" href="../ixeb/asset/css/COM_code.css">
+    <i-dataset id="dataset0" serviceId="service_com_code02">
+        <header>
+            [{"id":"STDCODE","object":"","type":"","size":"","desc":""},{"id":"GRPCODE","object":"edit","type":"","size":"","desc":"하위코드"},{"id":"CODNAME","object":"edit","type":"","size":"","desc":"하위코드명"},{"id":"DESCRIPTION","object":"edit","type":"","size":"","desc":"비고"},{"id":"PRT_SEQ","object":"edit","type":"int","size":"","desc":"출력"},{"id":"USEYN","object":"check","type":"","size":"","desc":"사용유무"}]
+        </header>
+        <data>
+            []
+        </data>
+        <i-bind bindtype="recordset" target="grid1">
+        </i-bind>
+        <i-bind bindtype="recordset" property="" target="grid0" column=""></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit9" column="GRPCODE"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit10" column="CODNAME"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit11" column="DESCRIPTION"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit12" column="PRT_SEQ"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="check3" column="USEYN"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit18" column="STDCODE"></i-bind>
+</i-dataset>
+
+    <i-dataset id="dataset1" serviceId="service_com_code01">
+        <header>
+            [{"id":"STDCODE","object":"","type":"","size":"","desc":""},{"id":"GRPCODE","object":"","type":"","size":"","desc":""},{"id":"CODNAME","object":"","type":"","size":"","desc":""},{"id":"DESCRIPTION","object":"","type":"","size":"","desc":""},{"id":"PRT_SEQ","object":"","type":"","size":"","desc":""},{"id":"USEYN","object":"check","type":"","size":"","desc":""}]
+        </header>
+        <data>
+        	[]
+        </data>
+        <i-bind bindtype="attribute" property="value" target="edit14" column="CODNAME"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit16" column="DESCRIPTION"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit17" column="STDCODE"></i-bind>
+        <i-bind bindtype="recordset" target="grid1">
+        </i-bind>
+            <i-bind bindtype="attribute" property="value" target="check4" column="USEYN"></i-bind>
+</i-dataset>
+</head>
+
+<body onInitScreen="onInitScreen_body()" style="">
+    <div class="wrapper">
+        <div class="main_title_container">
+            <div class="menu_title">
+                <h1>공통코드관리</h1>
+            </div>
+            <div class="button_container">
+                <!-- 첫번째 버튼은 무조건 class를 red_button으로 지정해주세요. -->
+                <i-button text="엑셀" class="red_button" tabIndex="4" style="background-size: 100% 100%;" onclick="onclick_btn_excelexport0()"><span
+                        style="font:inherit">엑셀</span></i-button>
+                <i-button text="조회" class="blue_button" tabIndex="10" style="background-size: 100% 100%;" onclick="onclick_btn_topSearch()"><span style="font:inherit">조회</span></i-button>
+            </div>
+        </div>
+        <article id="ccm-container">
+            <div class="search_container">
+                <div class="inner_search">
+                    <div class="search_title">상위코드</div>
+                    <i-combo id="combotopcode" style="width: 140px; margin-right:10px;" value="" items="[]" index="-1"
+                        tabIndex="15" onchange="onchange_combotopcode(arguments[0])"><i class="requireflag fa fa-check" aria-hidden="true" tabindex="-1"></i><input
+                            type="hidden" name="" tabIndex="1" value=""><input class="input" type="text" tabIndex="6"
+                            readonly="readonly"> <i class="trigger fa fa-caret-down" aria-hidden="true" onclick="$(this).parents('i-edit').attr('value','');"
+                            tabindex="-1"></i></i-combo>
+                    <div class="search_title">사용유무</div>
+                    <i-combo id="comboYN" style="width: 140px" value="" items="[{'label':'Y','value':'Y'},{'label':'N','value':'N'}]"
+                        index="-1" tabIndex="16"><i class="requireflag fa fa-check" aria-hidden="true" tabindex="-1"></i><input
+                            type="hidden" name="" tabIndex="2" value=""><input class="input" type="text" tabIndex="7"
+                            readonly="readonly"> <i class="trigger fa fa-caret-down" aria-hidden="true" onclick="$(this).parents('i-edit').attr('value','');"
+                            tabindex="-1"></i></i-combo>
+                </div>
+                <div>
+                    <i-button id="btn_search" onclick="onclick_btn_search()" class="inquire_button" text="조회" tabIndex="8"
+                        style="background-size: 100% 100%;"><span style="font:inherit">조회</span></i-button>
+                </div>
+            </div>
+            <div id="ccm-contents">
+                <div id="ccm-left">
+                    <i-grid columns="[{'fieldName':'STDCODE','name':'STDCODE','colType':'','type':'','colVisible':true,'headerText':'하위코드'},{'fieldName':'GRPCODE','name':'GRPCODE','colType':'edit','type':'','headerText':'상위코드','colVisible':false},{'fieldName':'CODNAME','name':'CODNAME','colType':'edit','type':'','headerText':'하위코드명'},{'fieldName':'PRT_SEQ','name':'PRT_SEQ','colType':'edit','type':'int','headerText':'출력순'},{'fieldName':'USEYN','name':'USEYN','colType':'check','type':'','headerText':'사용유무','onValue':'Y','offValue':'N','value':'N'},{'fieldName':'DESCRIPTION','name':'DESCRIPTION','colType':'edit','type':'','headerText':'비고'}]"
+                        id="grid0" style="width: 100%; height: 100%;" columnlastextend="true" columncount="6"
+                        initrowcount="0" sumrowshow="none" columnmove="true" columnresize="true" statebar="false"
+                        rowautocount="true" strippedpattern="true" sorted="true" griditem="[]" tabIndex="18"></i-grid>
+
+                </div>
+                <div id="ccm-right">
+                    <div class="div-subcode">
+                        <div class="sub_title_container">
+                            <div class="menu_title">
+                                <h2>하위코드</h2>
+                            </div>
+                            <div class="button_container">
+                                <i-button id="btn_remove0" class="grid_button" text="삭제" tabIndex="3" style="background-size: 100% 100%;"
+                                    onclick="onclick_btn_remove0();"><span style="font:inherit">삭제</span></i-button>
+                                <i-button id="btn_add0" class="grid_button" text="등록" tabIndex="11" style="background-size: 100% 100%;"
+                                    onclick="onclick_btn_add0();"><span style="font:inherit">등록</span></i-button>
+                                <i-button id="btn_exec0" class="grid_button" text="저장" tabIndex="12" style="background-size: 100% 100%;"
+                                    onclick="onclick_btn_exec0();"><span style="font:inherit">저장</span></i-button>
+                            </div>
+                        </div>
+                        <table style="table-layout:fixed;" id="table-subcode" class="common_table">
+                            <colgroup>
+                                <col style="width: 40%">
+                                <col style="width: 60%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>하위코드</th>
+                                    <td>
+                                        <i-edit id="edit9" enable="false" style="display: none;" tabIndex="14"></i-edit>
+                                        <i-edit id="edit18" enable="false" tabIndex="17"></i-edit>
+                                </td>
+                                </tr>
+                                <tr>
+                                    <th>하위코드명</th>
+                                    <td>
+                                        <i-edit id="edit10" tabIndex="19"></i-edit>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>출력순</th>
+                                    <td>
+                                        <i-edit id="edit12" tabIndex="20" type="number"></i-edit>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>사용유무</th>
+                                    <td>
+                                        <i-check id="check3" tabIndex="21" value="N" checked="false" onValue="Y" offValue="N"></i-check>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>비고</th>
+                                    <td>
+                                        <i-multilineedit id="edit11" tabIndex="22"></i-multilineedit>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="div-topcode">
+                        <div class="sub_title_container">
+                            <div class="menu_title">
+                                <h2>상위코드</h2>
+                            </div>
+                            <div class="button_container">
+                                <i-button class="grid_button" text="삭제" tabIndex="5" style="background-size: 100% 100%;" onclick="onclick_btn_remove1();"><span
+                                        style="font:inherit">삭제</span></i-button>
+                                <i-button class="grid_button" text="등록" tabIndex="13" style="background-size: 100% 100%;" onclick="onclick_btn_add1();"><span
+                                        style="font:inherit">등록</span></i-button>
+                                <i-button class="grid_button" text="저장" tabIndex="9" style="background-size: 100% 100%;" onclick="onclick_btn_exec1()"><span
+                                        style="font:inherit">저장</span></i-button>
+                                </div>
+                        </div>
+                        <table style="table-layout:fixed;" id="table-topcode" class="common_table">
+                            <colgroup>
+                                <col style="width: 40%">
+                                <col style="width: 60%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>상위코드</th>
+                                    <td>
+                                        <i-grid id="grid1" style="display:none" columns="[{'fieldName':'STDCODE','name':'STDCODE','colType':'','type':''},{'fieldName':'GRPCODE','name':'GRPCODE','colType':'','type':''},{'fieldName':'CODNAME','name':'CODNAME','colType':'','type':''},{'fieldName':'DESCRIPTION','name':'DESCRIPTION','colType':'','type':''},{'fieldName':'PRT_SEQ','name':'PRT_SEQ','colType':'','type':''},{'fieldName':'USEYN','name':'USEYN','colType':'check','type':'','value':'N','onValue':'Y','offValue':'N'}]" tabIndex="26" columncount="6" initrowcount="0"></i-grid>
+                                        <i-edit id="edit17" enable="false" tabIndex="23"></i-edit>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>상위코드명</th>
+                                    <td>
+                                        <i-edit id="edit14" tabIndex="24"></i-edit>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>사용유무</th>
+                                    <td>
+                                        <i-check text="" id="check4" value="N" onValue="Y" offValue="N"></i-check>
+                                </td>
+                                </tr>
+                                <tr>
+                                    <th>비고</th>
+                                    <td>
+                                        <i-multilineedit id="edit16" tabIndex="25"></i-multilineedit>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </article>
+</div>
+    
+</body>
+<script>
+    function onInitScreen_body() {
+        
+    }
+
+    function onclick_btn_search(e) {
+        dataset0.clear();
+        edit18.enable=false;
+        dataset0.setParams({
+            "pGrcode": combotopcode.getSelectedValue(),
+            "pUseYn": comboYN.getSelectedValue()
+        })
+        ixeb.comm.transaction({
+            "in": ['dataset0=>' + dataset0.serviceId],
+            "out": [dataset0.serviceId + '=>dataset0'],
+            "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+        }).done(function (r) {
+            console.log(".SUCCESS");
+        }).fail(function (r) {
+            console.log("Error:\n" + r.message);
+        }).always(function () {
+            //TODO
+        });
+    }
+    
+    function onclick_btn_exec0() {
+        ixeb.comm.transaction({
+            "in": ['dataset0=>' + dataset0.serviceId],
+            "out": [dataset0.serviceId + '=>dataset0'],
+            "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+        }).done(function(r) {
+            onclick_btn_search();
+        }).fail(function(r) {
+            alert("Error:\n" + r.message);
+        }).always(function() {
+            // console.log("always");
+        });
+    }
+
+    function onclick_btn_remove0() {
+        grid0.deleteRow(grid0.getView().focusedRowIndex());
+    }
+
+    function onclick_btn_add0() {
+        var row = dataset0.appendRow({"USEYN":"N"});
+        grid0.setFocusedCell(row, 0);
+        grid0.focus();
+        edit9.value = edit17.value;
+        edit18.enable=true;
+    }
+
+    function onclick_btn_excelexport0() {
+        grid0.exportData("export.xlsx");
+    }
+    
+    function onchange_combotopcode(e) {
+        var sel = combotopcode.getCurSel();
+        grid1.setFocusedCell(sel, 0);
+    }
+    
+    function onclick_btn_topSearch(e) {
+        dataset0.clear();
+        dataset1.clear();
+        edit17.enable=false;
+        ixeb.comm.transaction({
+            "in": ['dataset1=>' + dataset1.serviceId],
+            "out": [dataset1.serviceId + '=>dataset1'],
+            "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+        }).done(function (r) {
+            combotopcode.clearAll();
+            var datas = JSON.parse(r.xhr.responseText)
+            datas.datasets[1].data.forEach(function (data) {
+                var comboData = "[{value:'" + data.STDCODE + "', label:'" + data.CODNAME + " (" + data.STDCODE +")'}]"
+                combotopcode.addItem(comboData)
+            })
+            combotopcode.setCurSel(0);
+            comboYN.setCurSel(0);
+        }).fail(function (r) {
+            console.log("Error:\n" + r.message);
+        }).always(function () {
+            //TODO
+        });
+    }
+    
+    function onclick_btn_exec1() {
+        ixeb.comm.transaction({
+            "in": ['dataset1=>' + dataset1.serviceId],
+            "out": [dataset1.serviceId + '=>dataset1'],
+            "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+        }).done(function(r) {
+            onclick_btn_topSearch();
+        }).fail(function(r) {
+            alert("Error:\n" + r.message);
+        }).always(function() {
+            // console.log("always");
+        });
+    }
+
+    function onclick_btn_remove1() {
+        grid1.deleteRow(grid1.getView().focusedRowIndex());
+    }
+
+    function onclick_btn_add1() {
+        edit17.enable=true;
+        var row = dataset1.appendRow({"USEYN":"N"});
+        grid1.setFocusedCell(row, 0);
+        grid1.focus();
+    }
+</script>
+
+</html>

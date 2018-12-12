@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+    <meta name="generator" content="iXebStudio Platform 2.2018.1130.2918">
+    <meta name="ixeb-studio:SaveZOrder" content="undefined">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ixeb-studio:grid-size" content="10x10">
+    <meta name="ixeb-studio:screen-size" content="1280x1024">
+	<meta name="created" content="2018/12/05 10:46">
+	<title>File title</title>
+	<script type="text/javascript" src="../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="../ixeb/lib/ixebBase.min.js"></script>
+	<!-- From here, enter your script and style. -->
+	<script type="text/javascript">
+	
+	</script>
+	<!-- stylesheet"-->
+	<link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/reset.css">
+	<link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/control.css">
+	<link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/common.css">
+	<style>
+	    h1 {
+	        margin-top: 10px;
+	    }
+	</style>
+</head>
+<body>
+    <!-- 꼭 .wrapper 클래스를 만들고 그 안에 작업해주세요. -->
+    <div class="wrapper">
+        <i-tabs style="width:480px; height:320px;" id="tabs0" tabCloseButton="true"><i-tabpage title="Tabpage 1"></i-tabpage><i-tabpage title="Tabpage 2"></i-tabpage></i-tabs>
+        <div class="menu_title" style="margin-top: 20px;">
+            <h1>메뉴메뉴메뉴</h1>
+        </div>
+        <div class="sub_title" style="margin-top: 20px">
+            <h1>서브서브서브</h1>
+        </div>
+        <div style="margin-top: 20px;">
+            <h1>i-edit</h1>
+            <i-edit tabIndex="1"></i-edit>
+            <i-edit enable="false" tabIndex="2"></i-edit>
+            <i-edit value="텍스트텍스트" tabIndex="3"></i-edit>
+            <i-edit showCalendarButton="true" tabIndex="4"></i-edit>
+            <i-edit required="true" tabIndex="5"></i-edit>
+            <i-edit required="true" showCalendarButton="true" tabIndex="6"></i-edit>
+        </div>
+        <div style="margin-top: 20px;">
+            <h1>i-maskedit</h1>
+            <i-maskedit tabIndex="7"></i-maskedit>
+            <i-maskedit enable="false" tabIndex="8"></i-maskedit>
+            <i-maskedit readonly="true" tabIndex="9"></i-maskedit>
+            <i-maskedit showCalendarButton="true" tabIndex="10"></i-maskedit>
+            <i-maskedit required="true" tabIndex="11"></i-maskedit>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>i-multilineedit</h1>
+            <i-multilineedit id="multilineedit0" style="width: 150px" tabIndex="12"></i-multilineedit>
+            <i-multilineedit id="multilineedit0" enable="false" style="width: 150px" tabIndex="13"></i-multilineedit>
+            <i-multilineedit id="multilineedit0" readOnly="true" style="width: 150px" tabIndex="14"></i-multilineedit>
+            <i-multilineedit id="multilineedit0"  required="true" style="width: 150px" tabIndex="15"></i-multilineedit>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>i-combo</h1>
+            <i-combo style="width:140px;" id="combo0" items="[{'label':'label1','value':'value1'},{'label':'label2','value':'value2'},{'label':'label3','value':'value3'},{'label':'label4','value':'value4'}]" tabIndex="16"></i-combo>
+            <i-combo style="width:140px;" id="combo0" enable="false" tabIndex="17"></i-combo>
+            <i-combo style="width:140px;" id="combo0" readOnly="true" tabIndex="18"></i-combo>
+            <i-combo style="width:140px;" id="combo0" required="true" items="[{'label':'label1','value':'value1'},{'label':'label2','value':'value2'},{'label':'label3','value':'value3'},{'label':'label4','value':'value4'}]" tabIndex="19"></i-combo>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>i-listbox</h1>
+            <h2>readonly 없음</h2>
+            <i-listbox style="width:140px; height:150px;" items="[{value:'value1', label:'Listbox 1'},{value:'value2', label:'Listbox 2'},{value:'value3', label:'Listbox 3'}]" id="listbox0" tabIndex="20"></i-listbox>
+            <i-listbox style="width:140px; height:150px;" items="[{value:'value1', label:'Listbox 1'},{value:'value2', label:'Listbox 2'},{value:'value3', label:'Listbox 3'}]" id="listbox0" enable="false" tabIndex="21"></i-listbox>
+            <i-listbox style="width:140px; height:150px;" items="[{value:'value1', label:'Listbox 1'},{value:'value2', label:'Listbox 2'},{value:'value3', label:'Listbox 3'}]" id="listbox0" required="true" tabIndex="22"></i-listbox>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>i-spinner</h1>
+            <h2>readonly 없음</h2>
+            <i-spinner style="width:140px;" id="spinner0"></i-spinner>
+            <i-spinner style="width:140px;" id="spinner1" enable="false"></i-spinner>
+        </div>
+        <div style="margin-top: 20px;">
+            <h1>i-scehduler</h1>
+            <h2>readonly 없음</h2>
+            <div style="display: flex;">
+                <i-scheduler id="scheduler0"></i-scheduler>
+                <i-scheduler id="scheduler0" style="margin: 0 20px" enable="false"></i-scheduler>
+                <i-scheduler id="scheduler0" required="true"></i-scheduler>
+                            <h2 style="position:absolute;left:50px;top:1410.33px">반드시 이 양식을 지켜주세요.</h2>
+</div>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>i-check</h1>
+            <h2>readonly 없음</h2>
+            <h2>required 없음</h2>
+            <div>
+                <i-check class="check1" text="Check" id="check0"></i-check>
+                <i-check class="check1" text="Check" id="check0" enable="false"></i-check>
+                <i-check class="check1" text="Check" id="check0" required="true"></i-check>
+            </div>
+            <div>
+                <i-check class="check2" text="Check" id="check0"></i-check>
+                <i-check class="check2" text="Check" id="check0" enable="false"></i-check>
+                <i-check class="check2" text="Check" id="check0" required="true"></i-check>
+            </div>
+            <div>
+                <i-check class="check3" text="Check" id="check0"></i-check>
+                <i-check class="check3" text="Check" id="check0" enable="false"></i-check>
+                <i-check class="check3" text="Check" id="check0" required="true"></i-check>
+            </div>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>i-radio</h1>
+            <h2>readonly 없음</h2>
+            <i-radio items="[{value:'value1', label:'Radio 1'},{value:'value2', label:'Radio 2'},{value:'value3', label:'Radio 3'}]" id="radio0"></i-radio>
+            <i-radio items="[{value:'value1', label:'Radio 1'},{value:'value2', label:'Radio 2'},{value:'value3', label:'Radio 3'}]" id="radio0" enable="false"></i-radio>
+            <i-radio items="[{value:'value1', label:'Radio 1'},{value:'value2', label:'Radio 2'},{value:'value3', label:'Radio 3'}]" id="radio0" required="true"></i-radio>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>i-button</h1>
+            <h2>required, readonly 없음</h2>
+            <h3>블루 버튼</h3>
+            <i-button text="Button" class="blue_button" id="button0"></i-button>
+            <i-button text="Button" class="blue_button" id="button0"></i-button>
+            <i-button text="Button" class="blue_button" id="button0" enable="false"></i-button>
+            <h3>레드 버튼</h3>
+            <i-button text="Button" class="red_button" id="button1"></i-button>
+            <i-button text="Button" class="red_button" id="button1"></i-button>
+            <i-button text="Button" class="red_button" id="button1" enable="false"></i-button>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>i-button 조회버튼</h1>
+            <i-button class="inquire_button" text="Button" id="button2"></i-button>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>그리드 폼 버튼</h1>
+            <i-button class="grid_button" text="Button" id="button3"></i-button>
+            <i-button class="grid_button" text="Button" id="button3" enable="false"></i-button>
+        </div>
+
+        <h1>공통 레이아웃</h1>
+        
+
+        <div class="margin-top: 20px">
+            <h1>menu_mainTitle</h1>
+            <div class="main_title_container">
+                <div class="menu_title">
+                    <h1>메인메뉴</h1>
+                </div>
+                <div class="button_container">
+                    <!-- 첫번째 버튼은 무조건 class를 red_button으로 지정해주세요. -->
+                    <i-button text="엑셀" class="red_button"></i-button>
+                    <i-button text="조회" class="blue_button"></i-button>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>search_container</h1>
+            <div class="search_container">
+                <div class="inner_search">
+                    <div class="search_title">상위코드</div>
+                    <i-edit style="width: 500px"></i-edit>
+                    <div class="search_title">사용유무</div>
+                    <i-combo style="width: 140px"></i-combo>
+                </div>
+                <div>
+                    <i-button class="inquire_button" text="조회"></i-button>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>sub-title</h1>
+            <div class="sub_title_container">
+                <div class="menu_title">
+                    <h2>하위코드</h2>
+                </div>
+                <div class="button_container">
+                    <i-button class="grid_button" text="삭제"></i-button>
+                    <i-button class="grid_button" text="등록"></i-button>
+                    <i-button class="grid_button" text="저장"></i-button>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 20px">
+            <h1>공통 테이블</h1>
+            <div class="table_container" width="100%; height: 500px">
+                <table class="common_table" style="width: 100%; height: 100%;">
+                    <colgroup>
+                        <col style="width: 40%">
+                        <col style="width: 60%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>THTHTHTH</th>
+                            <td>TDTDTDTD</td>
+                        </tr>
+                        <tr>
+                            <th>THTHTHTH</th>
+                            <td>TDTDTDTD</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="margin-top: 20px">
+            <div class="root_container">
+                <div class="super_root">권한관리</div>
+                <div class="right_arrow">></div>
+                <div class="child_root">메뉴등록관리</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

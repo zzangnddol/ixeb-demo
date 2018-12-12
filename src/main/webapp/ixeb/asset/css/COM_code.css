@@ -1,0 +1,81 @@
+#ccm-container{
+    width: 100%;
+}
+
+.button_container i-button{
+    width: 100px;
+}
+
+#ccm-contents{
+    display: flex;
+    justify-content: space-between;
+}
+
+#ccm-left{
+    width: 70%;
+}
+
+#ccm-left>#grid-codelist{
+    width: 100%;
+}
+
+#ccm-right{
+    width: calc(30% - 10px);
+}
+
+#ccm-right table{
+    width: 100%;
+}
+
+.div-subcode{
+    margin-bottom: 10px;
+}
+
+.button_container{
+    margin-bottom: 6px;
+}
+
+.div-topcode {
+    margin-top: 5px;   
+}
+
+.sub_title_container h2{
+    font-weight: bold;
+}
+
+.button_container>i-button{
+    width: 50px;
+    padding: 0;
+}
+
+.table-header{
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table-header>.table-title{
+    font-weight: bold;
+}
+
+.table-btns>i-button{
+    font-size: .7rem;
+    height: 20px;
+}
+
+.table-btns>i-button:nth-child(2){
+    margin: 0 3px;
+}
+
+.table-btns>i-button:last-child{
+    margin: 0 2px;
+}
+
+.div-topcode>.table-header{
+    padding-top: 5px;
+}
+
+.common_table i-edit{
+    width: 70% !important;
+}

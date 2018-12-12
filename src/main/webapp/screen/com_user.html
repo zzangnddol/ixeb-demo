@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="ixeb-studio:guide-vline" content="">
+    <meta name="ixeb-studio:guide-hline" content="">
+    <meta name="generator" content="iXebStudio Platform 2.2018.1130.2918">
+    <meta name="ixeb-studio:SaveZOrder" content="undefined">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ixeb-studio:grid-size" content="10x10">
+    <meta name="ixeb-studio:screen-size" content="1280x1024">
+    <meta name="created" content="2018/12/05 10:50">
+    <title>com_user</title>
+    <style>
+
+    .button_container{
+       
+        position: relative;
+        left: 5px;
+    }
+    </style>
+    <script type="text/javascript" src="../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="../ixeb/asset/js/config.js"></script>
+    <script type="text/javascript" src="../ixeb/lib/ixebBase.min.js"></script>
+    <script type="text/javascript">
+        
+        //저장 버튼 
+        function onclick_save(e) {
+            ixeb.comm.transaction({
+                "in": ['dataset0=>' + dataset0.serviceId],
+                "out": [dataset0.serviceId + '=>dataset0'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+        //파란 입력 버튼(row추가)
+        function onclick_add(e) {
+            var row = dataset0.appendRow({});
+            grid1.setFocusedCell(row, 0);
+            grid1.focus();
+        }
+        //빨간 조회 버튼 
+        function onclick_r_button(e) {
+            ixeb.comm.transaction({
+                "in": ['dataset0=>' + dataset0.serviceId],
+                "out": [dataset0.serviceId + '=>dataset0'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+        //삭제 버튼 
+        function onclick_remove(e) {
+            //grid1.deleteRow(grid1.getFocusedCell().rowIndex);
+            grid1.deleteRow(grid1.getView().focusedRowIndex());
+        }
+        //선택 조회 버튼
+        function onclick_click(e) {
+            //콤보, 에디트 값이 없으면 조회 X
+            if (cb_userId.index < 0) {
+                return;
+            }
+            if (edt_search.value === '') {
+                return;
+            }
+            // 콤보, 에디트 값에 따라 조회
+            if (cb_userId.index === 0) {
+                dataset0.setParams({
+                    pList: '0',
+                    USER_ID: edt_search.value
+                });
+            } else if (cb_userId.index == 1) {
+                dataset0.setParams({
+                    pList: '1',
+                    USER_NM: edt_search.value
+                });
+            } else if (cb_userId.index == 2) {
+                dataset0.setParams({
+                    pList: '2',
+                    CST_NM: edt_search.value
+                });
+             }
+            // var selectedRow = 0;
+            // var record = grid1.getRecord(selectedRow);
+            // dataset0.setParams({
+            //     pUserId: record.USER_ID
+            // });
+            
+            ixeb.comm.transaction({
+                "in": ['dataset0=>' + dataset0.serviceId],
+                "out": [dataset0.serviceId + '=>dataset0'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+    </script>
+    <!-- stylesheet"-->
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/reset.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/control.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/common.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/asset/css/com_user.css">
+    <link rel="stylesheet" href="../ixeb/asset/css/COM_code.css">
+
+    <i-dataset id="dataset0" serviceId="service_com_user01">
+        <header>
+            [{"id":"USER_ID","object":"","type":"","size":"","desc":""},{"id":"CST_CLS","object":"","type":"","size":"","desc":""},{"id":"CST_NM","object":"","type":"","size":"","desc":""},{"id":"EMAIL_ADDR","object":"","type":"","size":"","desc":""},{"id":"TEAM_NM","object":"","type":"","size":"","desc":""},{"id":"USER_NM","object":"","type":"","size":"","desc":""},{"id":"USER_PW","object":"","type":"","size":"","desc":""}]
+        </header><data>                                                                                                                                                                                                                                                                                                                                                                                               </data>
+        <i-bind bindtype="recordset" property="" target="grid1" column=""></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit0" column="USER_ID"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="cst_Nm" column="CST_NM"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="email_addr" column="EMAIL_ADDR"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edt_userNm" column="USER_NM"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edt_password" column="USER_PW"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="team_Nm" column="TEAM_NM"></i-bind>
+    </i-dataset>
+</head>
+
+<body>
+    <div class="wrapper" style="width:100%;height:50%;">
+        
+        <div class="top" style="width:100%">
+            <div class="main_title_container">
+                <div class="menu_title">
+                    <h1 >사용자관리</h1>
+                </div>
+                <div class="button_container">
+                    <i-button text="조회" class="red_button" tabIndex="1" onclick="onclick_r_button(arguments[0])" id="r_button"></i-button>
+                    <i-button text="입력" class="blue_button" tabIndex="2" id="add" onclick="onclick_add(arguments[0])"></i-button>
+                    <i-button text="삭제" class="blue_button" tabIndex="3" onclick="onclick_remove(arguments[0])" id="remove"></i-button>
+                    <i-button text="저장" class="blue_button" tabIndex="4" onclick="onclick_save(arguments[0])" id="save"></i-button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main" style="width:100%; height:65%;">
+            <div class="left" style="width:30%; height:80%;">
+                <div class="search_container" style="width:100%;">
+                    <div class="inner_search" style="width:100%;">
+                        <div class="search_title" >선택조회</div>
+                        <i-combo style="width: 38%; height: 22px; " tabIndex="5" items="[{'label':'아이디','value':'USER_ID'},{'label':'사용자명','value':'USER_NM'},{'label':'사업자명','value':'CST_NM'}]" id="cb_userId"></i-combo>
+                        <i-edit id="edt_search" style="width: 38%; height: 22px;  position:relative; left:10px;" tabIndex="6"></i-edit>
+                    </div>
+                    <div>
+                        <i-button class="inquire_button" text="조회" style="position:relative; left:15px;" tabIndex="7" id="click" onclick="onclick_click(arguments[0])"></i-button>
+                    </div>
+                </div>
+                <i-grid style="width: 100%;  height: 100%" id="grid1" columns="[{'fieldName':'USER_ID','name':'아이디','colType':'','type':''},{'fieldName':'USER_NM','name':'사용자명','colType':'','type':''},{'fieldName':'CST_NM','name':'사업자명','colType':'','type':''}]" columncount="3" initrowcount="0" tabIndex="8"></i-grid>
+            </div>
+
+            <div class="right" style="width:69%; height:100%;">
+                <div class="table_container" style="width:100%; height:100%;">
+                    <table class="common_table" style="width:100%;  height:100%;">
+                        <colgroup>
+                            <col style="width: 20%">
+                            <col style="width: 30%">
+                            <col style="width: 20%">
+                            <col style="width: 30%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>아이디</th>
+                                <td>
+                                    <i-edit style="height: 23px;" tabIndex="9" id="edit0"></i-edit>
+                                </td>
+                                <th>비밀번호</th>
+                                <td>
+                                    <i-edit id="edt_password" style="height: 23px;" tabIndex="10"></i-edit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사용자명</th>
+                                <td>
+                                    <i-edit id="edt_userNm" style="height: 23px;" tabIndex="11"></i-edit>
+                                </td>
+                                <th>초기메뉴</th>
+                                <td>
+                                    <i-edit style="height: 23px;" tabIndex="12"></i-edit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사용자 IP</th>
+                                <td>
+                                    <i-edit style="height: 23px;" tabIndex="13"></i-edit>
+                                </td>
+                                <th>사업자등록번호</th>
+                                <td>
+                                    <i-edit style="height: 23px;" tabIndex="14"></i-edit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사업자 명</th>
+                                <td>
+                                    <i-edit id="cst_Nm" style="height: 23px;" tabIndex="16"></i-edit>
+                                </td>
+                                <th>사용자구분</th>
+                                <td>
+                                    <i-combo style="height: 23px; width: 70%; " id="combo0" tabIndex="15"></i-combo>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>부서(팀) 코드</th>
+                                <td>
+                                    <i-edit style="height: 23px;" tabIndex="17"></i-edit>
+                                </td>
+                                <th>부서(팀) 명</th>
+                                <td>
+                                    <i-edit id="team_Nm" style="height: 23px;" tabIndex="18"></i-edit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>전화번호</th>
+                                <td>
+                                    <i-maskedit style="width: 50px; height: 23px;" maxLength="3" minLength="0" minusSign="" pattern="ZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="19"> </i-maskedit> -
+                                    <i-maskedit style="width: 50px; height: 23px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="20"></i-maskedit> -
+                                    <i-maskedit style="width: 50px; height: 23px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="23"></i-maskedit>
+                                    <th>핸드폰</th>
+                                    <td>
+                                        <i-maskedit style="width: 50px; height: 23px;" maxLength="3" minLength="0" minusSign="" pattern="ZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false"></i-maskedit> -
+                                        <i-maskedit style="width: 50px; height: 23px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false"></i-maskedit> -
+                                        <i-maskedit style="width: 50px; height: 23px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false"></i-maskedit>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <th>팩스번호</th>
+                                <td>
+                                    <i-maskedit style="width: 50px; height: 23px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="25"></i-maskedit> -
+                                    <i-maskedit style="width: 50px; height: 23px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="26"></i-maskedit> -
+                                    <i-maskedit style="width: 50px; height: 23px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="27"></i-maskedit>
+                                </td>
+                                <th>e-mail</th>
+                                <td>
+                                    <i-edit id="email_addr" style="height: 23px;" tabIndex="28"></i-edit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>SMS 수신여부</th>
+                                <td>
+                                    <i-check class="check2" id="check0" required="true" tabIndex="29"></i-check>
+                                </td>
+                                <th>FAX수신여부</th>
+                                <td>
+                                    <i-check class="check2" id="check0" required="true" tabIndex="30"></i-check>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>e-mail 수신여부</th>
+                                <td>
+                                    <i-check class="check2" id="check1" required="true" tabIndex="31"></i-check>
+                                </td>
+                                <th>패스워드 변경</th>
+                                <td>
+                                    <i-check class="check2" id="check0" required="true" tabIndex="32"></i-check>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>SMS 송신가능횟수</th>
+                                <td>
+                                    <i-edit style="height: 23px;" tabIndex="33"></i-edit>
+                                </td>
+                                <th>직원 작업자 코드</th>
+                                <td>
+                                    <i-edit style="height: 23px;" tabIndex="34"></i-edit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>직원 작업자명</th>
+                                <td>
+                                    <i-edit style="height: 23px;" tabIndex="35"></i-edit>
+                                </td>
+                                <th>패스워드 인증 시작일</th>
+                                <td>
+                                    <i-maskedit showCalendarButton="true" style="width: 70%; height: 23px;" tabIndex="36"></i-maskedit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>패스워드 인증 종료일</th>
+                                <td>
+                                    <i-maskedit showCalendarButton="true" style="width:70%; height: 23px;" tabIndex="37"></i-maskedit>
+                                </td>
+                                <th>직원 AS/400 ID</th>
+                                <td>
+                                    <i-edit style="height: 23px;" tabIndex="39"></i-edit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사용자 확인자</th>
+                                <td>
+                                    <i-edit style="height: 23px;" tabIndex="38"></i-edit>
+                                </td>
+                                <th>확인일</th>
+                                <td>
+                                    <i-maskedit showCalendarButton="true" style="width: 70%; height: 23px;" tabIndex="40"></i-maskedit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사용 시작일</th>
+                                <td>
+                                    <i-maskedit showCalendarButton="true" style="width: 70%; height: 23px;" tabIndex="41"></i-maskedit>
+                                    <th>사용 종료일</th>
+                                    <td>
+                                        <i-maskedit showCalendarButton="true" style="width: 70%; height: 23px;"></i-maskedit>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <th>수정자</th>
+                                <td>
+                                    <i-edit style="height: 23px;" tabIndex="42"></i-edit>
+                                </td>
+                                <th>수정일</th>
+                                <td>
+                                    <i-maskedit showCalendarButton="true" style="width: 70%; height: 23px;" tabIndex="44"></i-maskedit>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>
+</body>
+</html>

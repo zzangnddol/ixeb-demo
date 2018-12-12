@@ -1,0 +1,48 @@
+section {
+    width: 100%;
+    height: calc(100% - 33px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.control_container {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid_container, .table_container {
+    width: 100%;
+    height: calc(100% - 29px);
+    display: flex;
+    flex-direction: column;
+}
+
+.table_container > table {
+    width: 100%;
+    border-bottom: none;
+}
+
+.table_container > table th td {
+    height: 35px;
+}
+
+.dummy_div {
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.dummy_div > div:first-child {
+    width: 40%;
+    background-color: #5e728a;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.dummy_div > div:last-child {
+    width: 60%;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}

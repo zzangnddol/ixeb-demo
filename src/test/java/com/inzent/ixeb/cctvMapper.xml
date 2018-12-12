@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="s_TBL_CCTV3">
+    <insert id="C">
+    INSERT INTO 
+    TBL_CCTV (  AGENCY,  ADDRESSNEW,  ADDRESSOLD,  PURPOSE,  Number,  PIXELS,  SHOOTINGSCENE,  DAYOFKEEP,  DATEOFINSTALLATION,  AGENCYPHONENUMBER,  LATITUDE,  LONGITUDE,  DATEBASED ) 
+    VALUES ( #{AGENCY},  #{ADDRESSNEW},  #{ADDRESSOLD},  #{PURPOSE},  #{Number},  #{PIXELS},  #{SHOOTINGSCENE},  #{DAYOFKEEP},  #{DATEOFINSTALLATION},  #{AGENCYPHONENUMBER},  #{LATITUDE},  #{LONGITUDE},  #{DATEBASED} )
+    <if test='aa'>
+    bbb
+    </if>
+    </insert>
+    <select id="R" parameterType="string" resultType="HashMap">
+       SELECT  * FROM TBL_CCTV
+    </select>
+    <update id="U" parameterType="HashMap">
+    UPDATE TBL_CCTV 
+    SET  AGENCY =  #{AGENCY},  ADDRESSNEW =  #{ADDRESSNEW},  
+    ADDRESSOLD =  #{ADDRESSOLD},  PURPOSE =  #{PURPOSE},  Number =  #{Number},  
+    PIXELS =  #{PIXELS},  SHOOTINGSCENE =  #{SHOOTINGSCENE},  DAYOFKEEP =  #{DAYOFKEEP},  
+    DATEOFINSTALLATION =  #{DATEOFINSTALLATION},  AGENCYPHONENUMBER =  #{AGENCYPHONENUMBER},  
+    LATITUDE =  #{LATITUDE},  LONGITUDE =  #{LONGITUDE},  DATEBASED =  #{DATEBASED} 
+    WHERE #
+    </update>
+    <delete id="D" >
+    DELETE FROM TBL_CCTV WHERE #
+    </delete>
+</mapper>

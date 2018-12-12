@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+    <meta name="generator" content="iXebStudio Platform 2.2018.1130.2918">
+    <meta name="ixeb-studio:SaveZOrder" content="undefined">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ixeb-studio:grid-size" content="10x10">
+    <meta name="ixeb-studio:screen-size" content="1280x1024">
+	<meta name="created" content="2018/12/05 14:22">
+	<title>multiTransaction</title>
+	<script type="text/javascript" src="../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="../ixeb/asset/js/config.js"></script>
+    <script type="text/javascript" src="../ixeb/lib/ixebBase.min.js"></script>
+	<!-- From here, enter your script and style. -->
+	<script type="text/javascript">
+	
+	    function onclick_button0(e) {
+			//TODO:
+			onclick_btn_exec0();
+			onclick_btn_exec1();
+			onclick_btn_exec2();
+			onclick_btn_exec3();
+			onclick_btn_exec4();
+			onclick_btn_exec5();
+		}
+
+        function onclick_btn_exec0() {
+            ixeb.comm.transaction({
+                "in": ['dataset0=>' + dataset0.serviceId],
+                "out": [dataset0.serviceId + '=>dataset0'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        function onclick_btn_exec1() {
+            ixeb.comm.transaction({
+                "in": ['dataset1=>' + dataset1.serviceId],
+                "out": [dataset1.serviceId + '=>dataset1'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        function onclick_btn_exec2() {
+            ixeb.comm.transaction({
+                "in": ['dataset2=>' + dataset2.serviceId],
+                "out": [dataset2.serviceId + '=>dataset2'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        function onclick_btn_exec3() {
+            ixeb.comm.transaction({
+                "in": ['dataset3=>' + dataset3.serviceId],
+                "out": [dataset3.serviceId + '=>dataset3'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        function onclick_btn_exec4() {
+            ixeb.comm.transaction({
+                "in": ['dataset4=>' + dataset4.serviceId],
+                "out": [dataset4.serviceId + '=>dataset4'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        function onclick_btn_exec5() {
+            ixeb.comm.transaction({
+                "in": ['dataset5=>' + dataset5.serviceId],
+                "out": [dataset5.serviceId + '=>dataset5'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+    </script>
+    <!-- stylesheet"-->
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/reset.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/control.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/common.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/asset/css/multiTransaction.css">
+    
+    <i-dataset id="dataset0" serviceId="service_service04">
+        <header>
+            [{"id":"ID","object":"","type":"","size":"","desc":""},{"id":"ORG","object":"","type":"","size":"","desc":""},{"id":"NAME","object":"","type":"","size":"","desc":""},{"id":"TEL","object":"","type":"","size":"","desc":""},{"id":"NOTE","object":"","type":"","size":"","desc":""}]
+        </header>
+        <data>
+        	[]
+        </data>
+            <i-bind bindtype="recordset" target="grid0">
+        </i-bind>
+</i-dataset>
+    <i-dataset id="dataset1" serviceId="service_pms001">
+        <header>
+            [{"id":"COMPID","object":"","type":"","size":"","desc":""},{"id":"NAME","object":"","type":"","size":"","desc":""},{"id":"PARENT_ID","object":"","type":"","size":"","desc":""},{"id":"ID","object":"","type":"","size":"","desc":""},{"id":"LEVLCD","object":"","type":"","size":"","desc":""},{"id":"TITEXT1","object":"","type":"","size":"","desc":""},{"id":"TITEXT2","object":"","type":"","size":"","desc":""},{"id":"TITEXT3","object":"","type":"","size":"","desc":""},{"id":"TITEXT4","object":"","type":"","size":"","desc":""},{"id":"TITEXT5","object":"","type":"","size":"","desc":""},{"id":"TITEXT6","object":"","type":"","size":"","desc":""},{"id":"TITEXT7","object":"","type":"","size":"","desc":""},{"id":"TITEXT8","object":"","type":"","size":"","desc":""},{"id":"TITEXT9","object":"","type":"","size":"","desc":""},{"id":"TITEXT10","object":"","type":"","size":"","desc":""},{"id":"TITEXT11","object":"","type":"","size":"","desc":""},{"id":"TITEXT12","object":"","type":"","size":"","desc":""},{"id":"TITEXT13","object":"","type":"","size":"","desc":""},{"id":"TITEXT14","object":"","type":"","size":"","desc":""},{"id":"TITEXT15","object":"","type":"","size":"","desc":""},{"id":"TITEXT16","object":"","type":"","size":"","desc":""},{"id":"TITEXT17","object":"","type":"","size":"","desc":""},{"id":"TITEXT18","object":"","type":"","size":"","desc":""},{"id":"TITEXT19","object":"","type":"","size":"","desc":""},{"id":"TITEXT20","object":"","type":"","size":"","desc":""},{"id":"TITEXT21","object":"","type":"","size":"","desc":""},{"id":"TITEXT22","object":"","type":"","size":"","desc":""},{"id":"TITEXT23","object":"","type":"","size":"","desc":""},{"id":"TITEXT24","object":"","type":"","size":"","desc":""},{"id":"TITEXT25","object":"","type":"","size":"","desc":""},{"id":"TITEXT26","object":"","type":"","size":"","desc":""},{"id":"TITEXT27","object":"","type":"","size":"","desc":""},{"id":"TITEXT30","object":"","type":"","size":"","desc":""},{"id":"FULLTIME_TOTAL","object":"","type":"","size":"","desc":""},{"id":"TOTAL","object":"","type":"","size":"","desc":""},{"id":"SORT","object":"","type":"","size":"","desc":""},{"id":"SEQ","object":"","type":"","size":"","desc":""}]
+        </header>
+        <data>
+        	[]
+        </data>
+            <i-bind bindtype="recordset" target="grid1">
+        </i-bind>
+</i-dataset>
+    <i-dataset id="dataset2" serviceId="service_cctv">
+        <header>
+            [{"id":"AGENCY","object":"","type":"","size":"","desc":""},{"id":"ADDRESSNEW","object":"","type":"","size":"","desc":""},{"id":"ADDRESSOLD","object":"","type":"","size":"","desc":""},{"id":"PURPOSE","object":"","type":"","size":"","desc":""},{"id":"NUMBER1","object":"","type":"","size":"","desc":""},{"id":"PIXELS","object":"","type":"","size":"","desc":""},{"id":"SHOOTINGSCENE","object":"","type":"","size":"","desc":""},{"id":"DAYOFKEEP","object":"","type":"","size":"","desc":""},{"id":"DATEOFINSTALLATION","object":"","type":"","size":"","desc":""},{"id":"AGENCYPHONENUMBER","object":"","type":"","size":"","desc":""},{"id":"LATITUDE","object":"","type":"","size":"","desc":""},{"id":"LONGITUDE","object":"","type":"","size":"","desc":""}]
+        </header>
+        <data>
+        	[]
+        </data>
+            <i-bind bindtype="recordset" target="grid2">
+        </i-bind>
+</i-dataset>
+    <i-dataset id="dataset3" serviceId="service_OverseasCompanies">
+        <header>
+            [{"id":"COLUMN1","object":"","type":"","size":"","desc":""},{"id":"COLUMN2","object":"","type":"","size":"","desc":""},{"id":"COLUMN3","object":"","type":"","size":"","desc":""},{"id":"COLUMN4","object":"","type":"","size":"","desc":""},{"id":"COLUMN5","object":"","type":"","size":"","desc":""},{"id":"COLUMN6","object":"","type":"","size":"","desc":""},{"id":"COLUMN7","object":"","type":"","size":"","desc":""},{"id":"COLUMN8","object":"","type":"","size":"","desc":""},{"id":"COLUMN9","object":"","type":"","size":"","desc":""},{"id":"COLUMN10","object":"","type":"","size":"","desc":""},{"id":"COLUMN11","object":"","type":"","size":"","desc":""},{"id":"COLUMN12","object":"","type":"","size":"","desc":""},{"id":"COLUMN13","object":"","type":"","size":"","desc":""},{"id":"COLUMN14","object":"","type":"","size":"","desc":""},{"id":"COLUMN15","object":"","type":"","size":"","desc":""},{"id":"COLUMN16","object":"","type":"","size":"","desc":""},{"id":"COLUMN17","object":"","type":"","size":"","desc":""}]
+        </header>
+        <data>
+        	[]
+        </data>
+            <i-bind bindtype="recordset" target="grid3">
+        </i-bind>
+</i-dataset>
+    <i-dataset id="dataset4" serviceId="service_notice">
+        <header>
+            [{"id":"SEQ","object":"","type":"","size":"","desc":""},{"id":"TITLE","object":"","type":"","size":"","desc":""},{"id":"DATEREG","object":"","type":"","size":"","desc":""},{"id":"CONTENT","object":"","type":"","size":"","desc":""}]
+        </header>
+        <data>
+        	[]
+        </data>
+            <i-bind bindtype="recordset" target="grid4">
+        </i-bind>
+</i-dataset>
+    <i-dataset id="dataset5" serviceId="service_menu">
+        <header>
+            [{"id":"ID","object":"","type":"","size":"","desc":""},{"id":"TEXT","object":"","type":"","size":"","desc":""},{"id":"ICON","object":"","type":"","size":"","desc":""},{"id":"URL","object":"","type":"","size":"","desc":""},{"id":"SORT","object":"","type":"","size":"","desc":""}]
+        </header>
+        <data>
+        	[]
+        </data>
+            <i-bind bindtype="recordset" target="grid5">
+        </i-bind>
+</i-dataset>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main_title_container">
+            <div class="menu_title">
+                <h1>멀티트랜젝션</h1>
+            </div>
+            <div>
+                <i-button text="실행" id="button0" onclick="onclick_button0(arguments[0])" class="red_button" tabIndex="1"></i-button>
+            </div>
+        </div>
+        <div class="grid_wrapper">
+                <div class="grid_container">
+                    <i-grid id="grid0" style="width: 100%; height: 100%" columns="[{'fieldName':'ID','name':'ID','colType':'','type':''},{'fieldName':'ORG','name':'ORG','colType':'','type':''},{'fieldName':'NAME','name':'NAME','colType':'','type':''},{'fieldName':'TEL','name':'TEL','colType':'','type':''},{'fieldName':'NOTE','name':'NOTE','colType':'','type':''}]" columncount="5" initrowcount="0" columnlastextend="true" tabIndex="2"></i-grid>
+                </div> 
+                <div class="grid_container">
+                    <i-grid id="grid1" style="width: 100%; height: 100%" columns="[{'fieldName':'COMPID','name':'COMPID','colType':'','type':'','size':''},{'fieldName':'NAME','name':'NAME','colType':'','type':'','size':''},{'fieldName':'PARENT_ID','name':'PARENT_ID','colType':'','type':'','size':''},{'fieldName':'ID','name':'ID','colType':'','type':'','size':''},{'fieldName':'LEVLCD','name':'LEVLCD','colType':'','type':'','size':''},{'fieldName':'TITEXT1','name':'TITEXT1','colType':'','type':'','size':''},{'fieldName':'TITEXT2','name':'TITEXT2','colType':'','type':'','size':''},{'fieldName':'TITEXT3','name':'TITEXT3','colType':'','type':'','size':''},{'fieldName':'TITEXT4','name':'TITEXT4','colType':'','type':'','size':''},{'fieldName':'TITEXT5','name':'TITEXT5','colType':'','type':'','size':''},{'fieldName':'TITEXT6','name':'TITEXT6','colType':'','type':'','size':''},{'fieldName':'TITEXT7','name':'TITEXT7','colType':'','type':'','size':''},{'fieldName':'TITEXT8','name':'TITEXT8','colType':'','type':'','size':''},{'fieldName':'TITEXT9','name':'TITEXT9','colType':'','type':'','size':''},{'fieldName':'TITEXT10','name':'TITEXT10','colType':'','type':'','size':''},{'fieldName':'TITEXT11','name':'TITEXT11','colType':'','type':'','size':''},{'fieldName':'TITEXT12','name':'TITEXT12','colType':'','type':'','size':''},{'fieldName':'TITEXT13','name':'TITEXT13','colType':'','type':'','size':''},{'fieldName':'TITEXT14','name':'TITEXT14','colType':'','type':'','size':''},{'fieldName':'TITEXT15','name':'TITEXT15','colType':'','type':'','size':''},{'fieldName':'TITEXT16','name':'TITEXT16','colType':'','type':'','size':''},{'fieldName':'TITEXT17','name':'TITEXT17','colType':'','type':'','size':''},{'fieldName':'TITEXT18','name':'TITEXT18','colType':'','type':'','size':''},{'fieldName':'TITEXT19','name':'TITEXT19','colType':'','type':'','size':''},{'fieldName':'TITEXT20','name':'TITEXT20','colType':'','type':'','size':''},{'fieldName':'TITEXT21','name':'TITEXT21','colType':'','type':'','size':''},{'fieldName':'TITEXT22','name':'TITEXT22','colType':'','type':'','size':''},{'fieldName':'TITEXT23','name':'TITEXT23','colType':'','type':'','size':''},{'fieldName':'TITEXT24','name':'TITEXT24','colType':'','type':'','size':''},{'fieldName':'TITEXT25','name':'TITEXT25','colType':'','type':'','size':''},{'fieldName':'TITEXT26','name':'TITEXT26','colType':'','type':'','size':''},{'fieldName':'TITEXT27','name':'TITEXT27','colType':'','type':'','size':''},{'fieldName':'TITEXT30','name':'TITEXT30','colType':'','type':'','size':''},{'fieldName':'FULLTIME_TOTAL','name':'FULLTIME_TOTAL','colType':'','type':'','size':''},{'fieldName':'TOTAL','name':'TOTAL','colType':'','type':'','size':''},{'fieldName':'SORT','name':'SORT','colType':'','type':'','size':''},{'fieldName':'SEQ','name':'SEQ','colType':'','type':'','size':''}]" tabIndex="3"></i-grid>
+                </div>
+                <div class="grid_container">
+                    <i-grid id="grid2" style="width: 100%; height: 100%" columns="[{'fieldName':'AGENCY','name':'AGENCY','colType':'','type':'','size':''},{'fieldName':'ADDRESSNEW','name':'ADDRESSNEW','colType':'','type':'','size':''},{'fieldName':'ADDRESSOLD','name':'ADDRESSOLD','colType':'','type':'','size':''},{'fieldName':'PURPOSE','name':'PURPOSE','colType':'','type':'','size':''},{'fieldName':'NUMBER1','name':'NUMBER1','colType':'','type':'','size':''},{'fieldName':'PIXELS','name':'PIXELS','colType':'','type':'','size':''},{'fieldName':'SHOOTINGSCENE','name':'SHOOTINGSCENE','colType':'','type':'','size':''},{'fieldName':'DAYOFKEEP','name':'DAYOFKEEP','colType':'','type':'','size':''},{'fieldName':'DATEOFINSTALLATION','name':'DATEOFINSTALLATION','colType':'','type':'','size':''},{'fieldName':'AGENCYPHONENUMBER','name':'AGENCYPHONENUMBER','colType':'','type':'','size':''},{'fieldName':'LATITUDE','name':'LATITUDE','colType':'','type':'','size':''},{'fieldName':'LONGITUDE','name':'LONGITUDE','colType':'','type':'','size':''}]" tabIndex="4"></i-grid>
+                </div>
+                <div class="grid_container">
+                    <i-grid id="grid3" style="width: 100%; height: 100%" columns="[{'fieldName':'COLUMN1','name':'COLUMN1','colType':'','type':'','size':''},{'fieldName':'COLUMN2','name':'COLUMN2','colType':'','type':'','size':''},{'fieldName':'COLUMN3','name':'COLUMN3','colType':'','type':'','size':''},{'fieldName':'COLUMN4','name':'COLUMN4','colType':'','type':'','size':''},{'fieldName':'COLUMN5','name':'COLUMN5','colType':'','type':'','size':''},{'fieldName':'COLUMN6','name':'COLUMN6','colType':'','type':'','size':''},{'fieldName':'COLUMN7','name':'COLUMN7','colType':'','type':'','size':''},{'fieldName':'COLUMN8','name':'COLUMN8','colType':'','type':'','size':''},{'fieldName':'COLUMN9','name':'COLUMN9','colType':'','type':'','size':''},{'fieldName':'COLUMN10','name':'COLUMN10','colType':'','type':'','size':''},{'fieldName':'COLUMN11','name':'COLUMN11','colType':'','type':'','size':''},{'fieldName':'COLUMN12','name':'COLUMN12','colType':'','type':'','size':''},{'fieldName':'COLUMN13','name':'COLUMN13','colType':'','type':'','size':''},{'fieldName':'COLUMN14','name':'COLUMN14','colType':'','type':'','size':''},{'fieldName':'COLUMN15','name':'COLUMN15','colType':'','type':'','size':''},{'fieldName':'COLUMN16','name':'COLUMN16','colType':'','type':'','size':''},{'fieldName':'COLUMN17','name':'COLUMN17','colType':'','type':'','size':''}]" tabIndex="5"></i-grid>
+                </div>
+                <div class="grid_container">
+                    <i-grid id="grid4" style="width: 100%; height: 100%" columns="[{'fieldName':'SEQ','name':'SEQ','colType':'','type':''},{'fieldName':'TITLE','name':'TITLE','colType':'','type':''},{'fieldName':'DATEREG','name':'DATEREG','colType':'','type':''},{'fieldName':'CONTENT','name':'CONTENT','colType':'','type':''}]" columncount="4" initrowcount="0" columnlastextend="true" tabIndex="6"></i-grid>
+                </div>
+                <div class="grid_container">
+                    <i-grid id="grid5" style="width: 100%; height: 100%" columns="[{'fieldName':'ID','name':'ID','colType':'','type':''},{'fieldName':'TEXT','name':'TEXT','colType':'','type':''},{'fieldName':'ICON','name':'ICON','colType':'','type':''},{'fieldName':'URL','name':'URL','colType':'','type':''},{'fieldName':'SORT','name':'SORT','colType':'','type':''}]" columncount="5" initrowcount="0" columnlastextend="true" tabIndex="7"></i-grid>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

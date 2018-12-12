@@ -1,0 +1,38 @@
+ .inquire_button{
+	        width: 60px;
+	        height: 32px;
+	        position: relative;
+	        left: 7px;
+	    }
+	   
+	   .left{
+           float: left;
+       }
+       
+       .right{
+           float: right;
+       }
+       
+       table.common_table > tbody > tr > th{
+            text-align: left;
+       }
+       #r_button,
+       #add,
+       #save,
+       #remove {
+           	width: 85px;
+           	height: 32px;
+           	margin-left : -1px;
+            margin-bottom: -5px;
+       }
+       
+       i-maskedit[showcalendarbutton="true"] .fa-calendar{ 
+            display: inline-block; 
+           
+       }
+	   
+	    .button_container{
+       
+        position: relative;
+        left: 5px;
+    }

@@ -1,0 +1,159 @@
+* {
+    font-family: '나눔고딕';
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    min-width: 1280px;
+    min-height: 720px;
+    max-height: 960px;
+    box-sizing: border-box;
+}
+
+/* 메인 타이틀 */
+.main_title_container {
+    width: 100%;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main_title_container > .button_container {
+    display: flex;
+    align-items: center;
+}
+
+.button_container > i-button {
+    margin-right: 7px;
+}
+
+.button_container > i-button:last-child {
+    margin-right: none;
+}
+
+/* 서브 타이틀 */
+.sub_title_container {
+    height: 29px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.sub_title_container > .menu_title {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.sub_title_container > .button_container {
+    display: flex;
+    align-items: center;
+}
+
+.sub_title_container > .button_container > i-button {
+    margin-right: 3px;
+    box-sizing: border-box;
+}
+
+.sub_title_container > .button_container > i-button:last-child {
+    margin-right: 2px;
+}
+
+/* 조회 */
+.search_container {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 19px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5e728a;
+    border: 1px solid black;
+}
+
+.inner_search {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search_title {
+    color: white;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.inner_search > i-edit, .inner_search > i-maskedit {
+    margin-right: 30px;
+}
+
+.inner_search > *:last-child {
+    margin: 0 !important;
+}
+
+/* 공통 테이블 */
+table.common_table {
+    border: 1px solid #333;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table.common_table tbody > tr > th, table.common_table thead > tr > th {
+    background-color: #5e728a;
+    color: white;
+    border-bottom: 1px solid white;
+    text-align: left;
+    font-size: 12px;
+    padding: 0 5px;
+}
+
+table.common_table tbody tr:last-child th {
+    border-bottom: none;
+}
+
+table.common_table td {
+    background-color: white;
+    border-bottom: 1px solid #666666;
+    padding: 2px 2px 2px 6px;
+}
+
+table.common_table td:last-chlid {
+    border-bottom: none;
+}
+
+/* root */
+.root_container {
+    height: 33px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.root_container > div {
+    font-size: 12px;
+    color: #333;
+}
+
+.super_root {
+    position: relative;
+    padding-left: 15px;
+}
+
+.super_root::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 0;
+    background-image: url('./img/home.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.right_arrow {
+    padding: 0 5px;
+}

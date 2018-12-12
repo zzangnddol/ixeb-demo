@@ -1,0 +1,8 @@
+.main_title > div {
+    display: flex;
+    align-items: center;
+}
+
+.grid_container {
+    height: 500px;
+}

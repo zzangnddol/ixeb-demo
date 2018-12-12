@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="iXebStudio Platform 2.2018.1130.2918">
+    <meta name="ixeb-studio:SaveZOrder" content="undefined">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ixeb-studio:grid-size" content="10x10">
+    <meta name="ixeb-studio:screen-size" content="1280x1024">
+    <meta name="created" content="2018/12/05 11:00">
+    <title>File title</title>
+    <script type="text/javascript" src="../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="./../ixeb/asset/js/config.js"></script>
+    <script type="text/javascript" src="../ixeb/lib/ixebBase.min.js"></script>
+    <!-- From here, enter your script and style. -->
+    <script type="text/javascript">
+    function onloadcomplete_dataset0(e, dataset) {
+        //TODO:
+        onDataCellClicked_grid2();
+    }
+    
+        function onloadcomplete_dataset1(e, dataset) {
+            //TODO:
+            combo0.value = grid2.getCellData(grid2.getFocusedCell().rowIndex, 2);
+        }
+        var userID;
+        userID = "test11";
+
+        function onclick_button5(e) {
+            //TODO:
+            var menu_id = edit0.value;
+            var footer = grid1.getColumn(0).footer();
+            dataset1.setParams({
+                pUpMenuId: menu_id
+            });
+            ixeb.comm.transaction({
+                "in": ['dataset1=>' + dataset1.serviceId],
+                "out": [dataset1.serviceId + '=>dataset1'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+                var value = "조회건수 : 총 ( " + grid1.rowCount + " ) 건";
+                footer.setText(value);
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        function onclick_button3(e) {
+            //TODO:
+            var menu_id = edit0.value;
+            grid1.deleteRow(grid1.getView().focusedRowIndex());
+            dataset1.setValue(grid1.getFocusedCell().rowIndex, "USER_ID", userID);
+        }
+
+        function onclick_button4(e) {
+            //TODO:
+            var row = dataset1.appendRow({});
+            grid1.setFocusedCell(row, 0);
+            dataset1.setValue(grid1.getFocusedCell().rowIndex, "UP_MENU_ID", edit0.value);
+            dataset1.setValue(grid1.getFocusedCell().rowIndex, "USER_ID", userID);
+            combo0.infoMsg = dataset0.getRow(grid2.getFocusedCell().rowIndex).MENU_BM;
+            grid1.focus();
+        }
+
+        function onDataCellClicked_grid2(e, grid, cell) {
+            //TODO:
+            var footer = grid1.getColumn(0).footer();
+            var menu_id = edit0.value;
+            var system_code = edit1.value;
+            combo0.value = system_code;
+            console.log(menu_id);
+            dataset1.setParams({
+                pUpMenuId: menu_id
+            });
+            ixeb.comm.transaction({
+                //"in": ['dataset1=>' + dataset1.serviceId],
+                "out": [dataset1.serviceId + '=>dataset1'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                var value = "조회건수 : 총 ( " + grid1.rowCount + " ) 건";
+                footer.setSpanNext(3);
+                footer.setText(value);
+                footer.styles().setTextAlignment("near");
+                if(grid1.rowCount !== 0) {
+                    combo0.infoMsg = dataset0.getRow(grid2.getFocusedCell().rowIndex).MENU_BM;
+                }
+                else {
+                    combo0.infoMsg = '';
+                }
+                console.log(combo0.value);
+                console.log("Success.");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+
+        function onclick_button2(e) {
+            //TODO:
+            var footer = grid2.getColumn(0).footer();
+            ixeb.comm.transaction({
+                "in": ['dataset0=>' + dataset0.serviceId],
+                "out": [dataset0.serviceId + '=>dataset0'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                var value = "조회건수 : 총 ( " + grid2.rowCount + " ) 건";
+                console.log("Success.");
+                footer.setSpanNext(3);
+                footer.setText(value);
+                footer.styles().setTextAlignment("near");
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+            //alert(grid2.getRowStatus(4));
+        }
+
+        function onclick_button1(e) {
+            //TODO:
+            var row = dataset0.appendRow({});
+            grid2.setFocusedCell(row, 0);
+            spinner0.value = '0000';
+            grid2.setCellData(grid2.getFocusedCell().rowIndex, 0, '0000');
+            dataset0.setValue(grid2.getFocusedCell().rowIndex, "USER_ID", userID);
+            grid2.focus();
+        }
+
+        function onclick_button0(e) {
+            //TODO:
+            grid2.deleteRow(grid2.getView().focusedRowIndex());
+            dataset0.setValue(grid2.getFocusedCell().rowIndex, "USER_ID", userID);
+        }
+
+        function onInitScreen_body() {
+            //TODO:
+            var footer = grid2.getColumn(0).footer();
+            grid2.getView().footer().setHeight(30);
+            grid1.getView().footer().setHeight(30);
+            ixeb.comm.transaction({
+                "in": ['dataset0=>' + dataset0.serviceId],
+                "out": [dataset0.serviceId + '=>dataset0'],
+                "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+                var value = "조회건수 : 총 ( " + grid2.rowCount + " ) 건";
+                grid1.getColumn(0).footer().setSpanNext(3);
+                footer.setSpanNext(3);
+                footer.setText(value);
+                footer.styles().setTextAlignment("near");
+                footer.setStyles({
+                    'background': '#cfd9e2'
+                });
+                
+                grid1.getColumn(0).footer().setStyles({
+                    'background': '#cfd9e2'
+                });
+            }).fail(function(r) {
+                alert("Error:\n" + r.message);
+            }).always(function() {
+                // console.log("always");
+            });
+        }
+    </script>
+    <style>
+    h2 {
+        font-size: 13px;
+    }
+    .table_container {
+            height: calc(100% - 29px);
+        }
+        .grid_container {
+            float: left;
+            width: 50%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .grid_wrapper {
+            height: 50%;
+            padding-right: 10px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+        
+        .table_wrapper {
+            width: 50%;
+            height: 100%;
+            float: left;
+            position: relative;
+            padding-right: 10px;
+        }
+        
+        .table_containter {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .table1_wrapper {
+            width: 100%;
+            height: calc(50% - 30px);
+        }
+        
+        .table1 {
+            height: 50%;
+            padding-bottom: 5px;
+        }
+        
+        th {
+            text-align: left;
+        }
+        .sub_title_container > .button_container > i-button {
+            margin-bottom: 4px;
+        }
+        
+        
+    </style>
+    <!-- stylesheet"-->
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/reset.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/control.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/common.css">
+    <i-dataset id="dataset0" serviceId="service_com_menu01" onloadcomplete="onloadcomplete_dataset0(arguments[0], arguments[1].dataset)">
+        <header>
+            [{"id":"PRT_SEQ","object":"","type":"","size":"","desc":""},{"id":"MENU_ID","object":"","type":"","size":"","desc":""},{"id":"MENU_BM","object":"","type":"","size":"","desc":""}]
+        </header><data>
+                                                                                                                                                        	[]
+                                                                                                                                                        </data>
+        <i-bind bindtype="attribute" property="value" target="edit0" column="MENU_ID"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit1" column="MENU_BM"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="spinner0" column="PRT_SEQ"></i-bind>
+        <i-bind bindtype="recordset" property="" target="grid2" column=""></i-bind>
+    </i-dataset>
+    <i-dataset id="dataset1" serviceId="service_com_menu02" onloadcomplete="onloadcomplete_dataset1(arguments[0], arguments[1].dataset)">
+        <header>
+            [{"id":"PRT_SEQ","object":"edit","type":"","size":"","desc":"item0"},{"id":"MENU_ID","object":"edit","type":"","size":"","desc":"item1"},{"id":"MENU_BM","object":"edit","type":"","size":"","desc":"item2"},{"id":"UP_MENU_ID","object":"edit","type":"","size":"","desc":"item3"}]
+        </header><data>
+                                	[]
+                                </data>
+        <i-bind bindtype="recordset" property="" target="grid1" column=""></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit2" column="MENU_ID"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="edit3" column="MENU_BM"></i-bind>
+        <i-bind bindtype="attribute" property="value" target="spinner1" column="PRT_SEQ"></i-bind>
+    </i-dataset>
+</head>
+
+<body onInitScreen="onInitScreen_body()">
+    <div class="wrapper">
+        <div class="main_title_container">
+            <div class="menu_title">
+                <h1>메뉴등록</h1>
+            </div>
+        </div>
+        <div class="" style="height:calc(100% - 26px)">
+
+            <div class="grid_container">
+                <div class="grid_wrapper">
+                    <i-grid style="height: 100%; width: 100%;" columns="[{'fieldName':'PRT_SEQ','name':'PRT_SEQ','colType':'','type':'ascii','colWidth':150,'headerText':'출력순서','textAlignment':'center'},{'fieldName':'MENU_ID','name':'MENU_ID','colType':'','type':'','colWidth':260,'headerText':'시스템코드','textAlignment':'center'},{'fieldName':'MENU_BM','name':'MENU_BM','colType':'','type':'','colWidth':260,'headerText':'시스템명','textAlignment':'center'}]" id="grid2" columncount="3" initrowcount="0" sumrowshow="sum" columnlastextend="true" columnmove="true" columnresize="true" statebar="false" rowautocount="false" strippedpattern="true" sorted="true" griditem="[]" tabIndex="1" onDataCellClicked="onDataCellClicked_grid2(arguments[0], arguments[1], arguments[2])" sumRowTitle="" editable="false" dataFontSize="13" colHeadFontSize="13"></i-grid>
+                </div>
+
+                <div class="grid_wrapper" style="height: calc(50% - 26px);">
+                    <i-grid style="height: 100%; width: 100%; margin-top: 26px;" columns="[{'name':'출력순서','colWidth':150,'fieldName':'PRT_SEQ','textAlignment':'center'},{'name':'분류코드','colWidth':260,'fieldName':'MENU_ID','textAlignment':'center'},{'name':'분류명','colWidth':260,'fieldName':'MENU_BM','textAlignment':'center'}]" id="grid1" columncount="3" initrowcount="0" sumrowshow="sum" columnlastextend="true" columnmove="true" columnresize="true" statebar="false" rowautocount="false" strippedpattern="true" sorted="true" griditem="[]" tabIndex="2" sumRowTitle="" editable="false"></i-grid>
+                </div>
+
+            </div>
+            <div class="table_wrapper">
+                <div class="table1" style="">
+                    <div class="sub_title_container">
+                        <div class="menu_title">
+                            <h2>시스템정보</h2>
+                        </div>
+                        <div class="button_container">
+                            <i-button class="grid_button" text="삭제" tabIndex="3" onclick="onclick_button0(arguments[0])" id="button0"></i-button>
+                            <i-button class="grid_button" text="등록" onclick="onclick_button1(arguments[0])" tabIndex="5" id="button1"></i-button>
+                            <i-button class="grid_button" text="저장" tabIndex="8" id="button2" onclick="onclick_button2(arguments[0])"></i-button>
+                        </div>
+                    </div>
+                    <div class="table_container">
+                        <table class="common_table" style="width: 100%; height: 100%;margin-top: 2px;">
+                            <colgroup>
+                                <col style="width: 40%">
+                                <col style="width: 60%">
+                            </colgroup>
+
+                            <tbody>
+                                <tr style="height: 32px;">
+                                    <th>
+                                        시스템코드</th>
+                                    <td>
+                                        <i-edit style="width:300px;" id="edit0" tabIndex="10"></i-edit>
+                                    </td>
+                                </tr>
+                                <tr style="height: 32px;">
+                                    <th>
+                                        시스템명</th>
+                                    <td>
+                                        <i-edit style="width:300px;" id="edit1" tabIndex="12"></i-edit>
+                                    </td>
+                                </tr>
+                                <tr style="height: 32px;">
+                                    <th>출력순서</th>
+                                    <td>
+                                        <i-spinner style="width:300px;" id="spinner0" enable="false" tabIndex="14"></i-spinner>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                    </th>
+                                    <td>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="table1" style="margin-top: 26px; height: calc(50% - 26px)">
+                    <div class="sub_title_container">
+                        <div class="menu_title">
+                            <h2>분류정보</h2>
+                        </div>
+                        <div class="button_container">
+                            <i-button class="grid_button" text="삭제" tabIndex="4" id="button3" onclick="onclick_button3(arguments[0])"></i-button>
+                            <i-button class="grid_button" text="등록" tabIndex="6" id="button4" onclick="onclick_button4(arguments[0])"></i-button>
+                            <i-button class="grid_button" text="저장" tabIndex="7" id="button5" onclick="onclick_button5(arguments[0])"></i-button>
+                        </div>
+                    </div>
+                    <div class="table_container">
+                        <table class="common_table" style="width: 100%; height: 100%; margin-top: 2px;">
+                            <colgroup>
+                                <col style="width: 40%">
+                                <col style="width: 60%">
+                            </colgroup>
+
+                            <tbody>
+                                <tr style="height: 32px;">
+                                    <th class="table_color">시스템코드</th>
+                                    <td class="control_align">
+                                        <i-combo style="width:300px;" id="combo0" readOnly="true" tabIndex="9" labelField="" valueField="" index="0"></i-combo>
+
+                                    </td>
+                                </tr>
+                                <tr style="height: 32px;">
+                                    <th class="table_color">분류코드</th>
+                                    <td class="control_align">
+                                        <i-edit style="width:300px;" id="edit2" tabIndex="11"></i-edit>
+
+                                    </td>
+                                </tr>
+                                <tr style="height: 32px;">
+                                    <th class="table_color">
+                                        분류명</th>
+                                    <td class="control_align">
+                                        <i-edit style="width:300px;" id="edit3" tabIndex="13"></i-edit>
+
+                                    </td>
+                                </tr>
+                                <tr style="height: 32px;">
+                                    <th class="table_color">출력순서</th>
+                                    <td class="spinner_align">
+                                        <i-spinner style="width:300px;" id="spinner1" tabIndex="15" maxValue="10000" minValue="-10000"></i-spinner>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                    </th>
+                                    <td>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                        <p><br><br></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+    <meta name="generator" content="iXebStudio Platform 2.2018.1130.2918">
+    <meta name="ixeb-studio:SaveZOrder" content="undefined">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ixeb-studio:grid-size" content="10x10">
+    <meta name="ixeb-studio:screen-size" content="1280x1024">
+	<meta name="created" content="2018/12/05 18:45">
+	<title>File title</title>
+	<script type="text/javascript" src="./../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="./../ixeb/asset/js/config.js"></script>
+    <script type="text/javascript" src="./../ixeb/lib/ixebBase.min.js"></script>
+	<!-- From here, enter your script and style. -->
+	<script type="text/javascript">
+	function onInitScreen_body() {
+        //TODO:
+        grid0.sumRowShow = "sum";
+        grid1.sumRowShow = "sum";
+        
+        grid0.getView().getColumn(0).footer().setSpanNext(3);
+        grid1.getView().getColumn(0).footer().setSpanNext(3);
+    }
+    
+	function onDataCellClicked_grid0(e, grid, cell) {
+	     dataset1.setParams({
+            pGroupId: grid0.getRowData(cell.rowIndex, 0)[0]
+        });
+          
+        ixeb.comm.transaction({
+          "in": ['dataset1=>' + dataset1.serviceId],
+          "out": [dataset1.serviceId + '=>dataset1'],
+          "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+        }).done(function(r) {
+          console.log("Success.");
+          var value = "조회건수 : 총 ( " + grid1.rowCount + " ) 건";
+            grid1.getColumn(0).footer().setText(value);
+            grid1.getColumn(0).footer().styles().setTextAlignment("near");
+        }).fail(function(r) {
+          alert("Error:\n" + r.message);
+        }).always(function() {
+          // console.log("always");
+        });
+        
+    }
+    
+	 var selectCellRowIndex;
+	
+	function onclick_button0(e) {
+        //TODO:
+            grid1.setCellData(selectCellRowIndex, 2, combo0.value);
+            
+            ixeb.comm.transaction({
+              "in": ['dataset1=>' + dataset1.serviceId],
+              "out": [dataset1.serviceId + '=>dataset1'],
+              "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+            }).done(function(r) {
+                console.log("Success.");
+            }).fail(function(r) {
+                console.log("Error:\n" + r.message);
+            }).always(function() {
+                //TODO
+            });
+    }
+    
+	function onDataCellClicked_grid1(e, grid, cell) {
+        //TODO:
+        selectCellRowIndex = cell.rowIndex;
+        if(grid1.getRowData(selectCellRowIndex)) {
+            edit0.value = grid1.getRowData(selectCellRowIndex)[0];
+            edit1.value = grid1.getRowData(selectCellRowIndex)[1];
+            combo0.value = grid1.getRowData(selectCellRowIndex)[2];
+        }
+    }
+    
+	function onclick_button1(e) {
+        //TODO:
+      ixeb.comm.transaction({
+          "in": ['dataset0=>' + dataset0.serviceId],
+          "out": [dataset0.serviceId + '=>dataset0'],
+          "url": "http://10.1.91.156:8080/ixeb-manager/service.ixeb"
+      }).done(function(r) {
+          console.log("Success.");
+          var value = "조회건수 : 총 ( " + grid0.rowCount + " ) 건";
+            grid0.getColumn(0).footer().setText(value);
+            grid0.getColumn(0).footer().styles().setTextAlignment("near");
+      }).fail(function(r) {
+          alert("Error:\n" + r.message);
+      }).always(function() {
+          // console.log("always");
+      });
+    }
+    
+	
+	</script>
+	<!-- stylesheet"-->
+	<link rel="stylesheet" type="text/css" href="./../ixeb/themes/indiTexi/reset.css">
+	<link rel="stylesheet" type="text/css" href="./../ixeb/themes/indiTexi/control.css">
+    <link rel="stylesheet" type="text/css" href="./../ixeb/themes/indiTexi/common.css">
+	<link rel="stylesheet" type="text/css" href="./../ixeb/asset/css/inquireUserOrderByGroup.css">
+    
+    <i-dataset id="dataset0" serviceId="service_com_group_user01">
+        <header>
+            [{"id":"USER_ID","object":"","type":"","size":"","desc":""},{"id":"CST_CLS","object":"","type":"","size":"","desc":""},{"id":"CST_NM","object":"","type":"","size":"","desc":""},{"id":"CST_NBR","object":"","type":"","size":"","desc":""},{"id":"EMAIL_ADDR","object":"","type":"","size":"","desc":""},{"id":"TEAM_NM","object":"","type":"","size":"","desc":""},{"id":"USER_NM","object":"","type":"","size":"","desc":""},{"id":"USER_PW","object":"","type":"","size":"","desc":""}]
+        </header><data>
+                                                                                                                                                                                	[]
+                                                                                                                                                                                </data>
+        <i-bind bindtype="recordset" property="" target="grid0" column=""></i-bind>
+        <i-bind bindtype="recordset" property="value" target="combo0" column=""></i-bind>
+    </i-dataset>
+    <i-dataset id="dataset1" serviceId="service_com_group_user02">
+        <header>
+            [{"id":"USER_ID","object":"","type":"","size":"","desc":""},{"id":"CST_CLS","object":"","type":"","size":"","desc":""},{"id":"CST_NM","object":"","type":"","size":"","desc":""},{"id":"CST_NBR","object":"","type":"","size":"","desc":""},{"id":"EMAIL_ADDR","object":"","type":"","size":"","desc":""},{"id":"TEAM_NM","object":"","type":"","size":"","desc":""},{"id":"USER_NM","object":"","type":"","size":"","desc":""},{"id":"USER_PW","object":"","type":"","size":"","desc":""},{"id":"GROUP_ID","object":"","type":"","size":"","desc":""}]
+        </header><data>
+                                                                                                                                    	[]
+                                                                                                                                    </data>
+        <i-bind bindtype="recordset" property="" target="grid1" column=""></i-bind>
+    </i-dataset>
+</head>
+<body onInitScreen="onInitScreen_body()">
+    <div class="wrapper">
+        <div class="main_title_container">
+            <div class="menu_title">
+                <h1>그룹별사용자조회</h1>
+            </div>
+            <div class="button_container">
+                <i-button text="저장" class="red_button" id="button0" tabIndex="6" onclick="onclick_button0(arguments[0])"></i-button>
+                <i-button text="조회" class="blue_button" id="button1" tabIndex="7" onclick="onclick_button1(arguments[0])"></i-button>
+            </div>
+        </div>
+        <section>
+            <div class="control_container">
+                <div class="sub_title_container">
+                    <div class="menu_title">
+                        <h2>등록그룹</h2>
+                    </div>
+                </div>
+                <div class="grid_container">
+                    <i-grid style="width:100%; height:100%;" columns="[{'headerText':'그룹아이디','colWidth':30,'name':'column0','fieldName':'USER_ID'},{'name':'column1','headerText':'그룹명','fieldName':'TEAM_NM'}]" id="grid0" columncount="2" initrowcount="0" sumrowshow="none" columnlastextend="true" columnmove="true" columnresize="true" statebar="false" rowautocount="true" strippedpattern="true" sorted="true" griditem="[]" onDataCellClicked="onDataCellClicked_grid0(arguments[0], arguments[1], arguments[2])" tabIndex="3"></i-grid>
+                </div>
+            </div>
+            <div class="control_container">
+                <div class="sub_title_container">
+                    <div class="menu_title">
+                        <h2>그룹별 사용자</h2>
+                    </div>
+                </div>
+                <div class="grid_container">
+                    <i-grid style="width:100%; height:100%;" columns="[{'name':'column0','headerText':'사용자아이디','fieldName':'USER_ID','colWidth':30},{'name':'column1','headerText':'사용자명','fieldName':'USER_NM'},{'name':'column2','headerText':'사용자그룹','fieldName':'GROUP_ID','colVisible':false}]" id="grid1" columncount="3" initrowcount="0" sumrowshow="none" columnlastextend="true" columnmove="true" columnresize="true" statebar="false" rowautocount="true" strippedpattern="true" sorted="true" griditem="[]" onDataCellClicked="onDataCellClicked_grid1(arguments[0], arguments[1], arguments[2])" tabIndex="4"></i-grid>
+                </div>
+            </div>
+            <div class="control_container">
+                <div class="sub_title_container">
+                    <div class="menu_title">
+                        <h2>사용자 정보</h2>
+                    </div>
+                </div>
+                <div class="table_container">
+                    <table class="common_table" style="width: 100%;">
+                        <colgroup>
+                            <col style="width: 40%">
+                            <col style="width: 60%">
+                        </colgroup>
+                        <tbody>
+                            <tr style="height: 35px">
+                                <th>사용자아이디</th>
+                                <td>
+                                    <i-edit tabIndex="2" id="edit0" readOnly="true"></i-edit>
+                                </td>
+                            </tr>
+                            <tr style="height: 35px">
+                                <th>사용자명</th>
+                                <td>
+                                    <i-edit tabIndex="1" id="edit1" readOnly="true"></i-edit>
+                                </td>
+                            </tr>
+                            <tr style="height: 35px">
+                                <th>사용자그룹</th>
+                                <td>
+                                    <i-combo style="width:140px;" id="combo0" tabIndex="5" items="" index="-1" labelField="TEAM_NM" valueField="USER_ID"></i-combo>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="dummy_div">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

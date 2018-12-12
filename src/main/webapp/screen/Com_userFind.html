@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="iXebStudio Platform 2.2018.1130.2918">
+    <meta name="ixeb-studio:SaveZOrder" content="undefined">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ixeb-studio:grid-size" content="10x10">
+    <meta name="ixeb-studio:screen-size" content="1280x1024">
+    <meta name="created" content="2018/12/05 15:51">
+    <title>Com_userFind</title>
+  
+    <script type="text/javascript" src="../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="../ixeb/asset/js/config.js"></script>
+    <script type="text/javascript" src="../ixeb/lib/ixebBase.min.js"></script>
+    <!-- From here, enter your script and style. -->
+    <script type="text/javascript">
+        function sendData() {
+            console.log('called');
+            console.log('name', username.value);
+            $.post('/ixeb-manager/api/account/find', {
+                name: username.value,
+                cellPhone: cellPhone1.value + '-' + cellPhone2.value + '-' + cellPhone3.value,
+                email: email.value
+            }, function (response) {
+                console.log('response', response);
+                $('#resultText').text('고객님의 아이디는 [' + response.id + ']이며, 패스워드는 [' + response.password + ']입니다. 고객정보 관리에 유의하여 주십시오');
+            }).fail(function (error) {
+                $('#resultText').text('해당 사용자에 대한 정보가 없습니다. 담당자에게 문의바랍니다.');
+            });
+        }
+
+        function cancel() {
+            console.log('cancel button clicked', window.parent);
+            window.parent.hide_findInfo();
+        }
+    </script>
+    <!-- stylesheet"-->
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/reset.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/control.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/common.css">
+    <link rel="stylesheet" type="text/css" href="../ixeb/asset/css/Com_userFind.css">
+    
+</head>
+
+<body>
+    <div>
+        <div class="box">
+             <div class="top">
+                <i-text text="아이디/비밀번호 찾기" id="text0"></i-text>
+                <hr size="100px">
+            </div><br>
+    
+        <form > 
+            <div class="center">
+                <div class="pre">
+                    <pre style="color: #6E6E6E; font-weight: bold;" tabIndex="1">
+            아이디와 비밀번호 확인을 위하여 고객님의 사업자번호와 
+            휴대폰 번호,이메일 주소를 정확히 입력해주세요
+            </pre><br>
+                </div>
+                <div class="box1">
+                    <div class="num1" style="display: flex; align-items: center;">
+                        <i-text text="이름" id="text1" style="width: 150px"></i-text>
+                        <div style="flex: 1 1 auto;">
+                            <i-edit id="username" style="width: 120px; height: 30px;" tabIndex="2"></i-edit>
+                        </div>
+                        <!-- <i-text text="사업자번호" id="text1" style="width: 150px"></i-text>
+                        <div style="flex: 1 1 auto;">
+                            <i-maskedit style="width: 70px; height: 30px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitInsert="false" tabIndex="2"></i-maskedit> -
+                            <i-maskedit style="width: 70px; height: 30px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitInsert="false" tabIndex="3"></i-maskedit> -
+                            <i-maskedit style="width: 70px; height: 30px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitInsert="false" tabIndex="4"></i-maskedit>
+                        </div> -->
+                    </div>
+                    <div class="num2" style="padding: 7px 0px 7px 0px; display: flex; align-items: center;">
+                        <i-text text="휴대폰번호" id="text2" style="width: 150px"></i-text>
+                        <div style="flex: 1 1 auto">
+                            <i-maskedit id="cellPhone1" style="width: 70px; height: 30px;" maxLength="3" minLength="0" minusSign="" pattern="ZZZ" textAlign="left" type="number" unitInsert="false" tabIndex="5"> </i-maskedit> -
+                            <i-maskedit id="cellPhone2" style="width: 70px; height: 30px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitInsert="false" tabIndex="6"></i-maskedit> -
+                            <i-maskedit id="cellPhone3" style="width: 70px; height: 30px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitInsert="false" tabIndex="7"></i-maskedit>
+                        </div>
+                    </div>
+
+                    <div class="email" style="display: flex; align-items: center;">
+                        <i-text text="이메일" id="text3" style="width: 150px"></i-text>
+                        <i-edit id="email" style="width:280px;" tabIndex="8"></i-edit>
+                    </div>
+                    <div id="resultText" class="message-box"></div>
+                </div>
+            </div>
+            
+            <div class="bottom">
+                <div class="button">
+                    <i-button type="submit" text="확인" id="button0" tabIndex="9" onclick="sendData()"></i-button>
+                    <i-button type=" reset" text="취소" id="button1" tabIndex="10" onclick="cancel()"></i-button>
+                </div>
+            </div>
+        </form>   
+        </div>
+    </div>
+</body>
+</html>

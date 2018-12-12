@@ -1,0 +1,764 @@
+﻿/* i-tabs */
+i-tabs, i-tabs * {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+i-tabs {
+    border-color: #cbcbcb;
+    background: white;
+}
+
+i-tabs > div {
+    padding: 0;
+    border-width: 1px;
+    border-color: #cbcbcb;
+    background-color: white;
+}
+
+i-tabs .tabbuttons {
+    position: static;
+    width: calc(100% - 6px);
+    height: auto;
+}
+
+i-tabs .tabbuttons > div {
+    height: 100%;
+    padding: 10px;
+    margin: 0;
+    min-width: 88px;
+    border-color: #cbcbcb;
+    background-color: white;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 0;
+    border-width: 0px 1px;
+}
+
+i-tabs .tabbuttons > div:hover {
+    color: #333;
+    border-width: 0px 1px;
+}
+
+i-tabs .tabbuttons .tabCloseBtn span {
+    display: none;
+}
+
+i-tabs .tabbuttons .tabCloseBtn::before {
+    content: "\f00d";
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+i-tabs .tabpages {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: calc(100% - 36px) !important;
+}
+
+i-tabs > .top .tabpages > div {
+    padding: 0;
+    overflow: visible;
+}
+
+i-tabs > .top .tabscroller {
+    top: 3px;
+}
+
+i-tabs .tabbuttons button {
+    background: transparent;
+    text-overflow: ellipsis;
+    color: inherit;
+    margin: 0 !important;
+    padding: 0;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-width: 0px 1px 1px 1px;
+}
+
+i-tabs .tabbuttons .tabCloseBtn {
+    margin: -1px 0 0 5px !important;
+    width: auto;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+i-tabs > .top .tabpages {
+    margin: 0;
+    width: auto;
+    padding-top: 2em;
+    height: 100%;
+}
+
+i-tabs > .top .tabpages > div {
+    margin-top: -1px;
+    padding: 0;
+    border-color: #cbcbcb;
+    border-width: 1px 0;
+}
+
+i-tabs > .top .tabbuttons div.tab-button-wrapper.selected {
+    border: 1px solid #1d5ba9;
+    box-shadow: none;
+    background-color: #038aca;
+    color: white;
+}
+
+i-tabs.mouseover > .top .tabbuttons div.tab-button-wrapper:hover {
+    color: #333;
+    border: 1px solid #cbcbcb;
+    border-width: 0px 1px;
+}
+
+i-tabs.mouseover > .top .tabbuttons div.tab-button-wrapper.selected:hover {
+   border: 1px solid #1d5ba9;
+   color: white;
+}
+
+i-tabs > .bottom .tabbuttons div.tab-button-wrapper.selected {
+    border-bottom-color: #45b7ff;
+    border-top-color: #ffffff;
+    border-width: 1px 1px 1px 1px;
+    box-shadow: inset 0px -2px 0px -1px #45b7ff;
+    background: #fff;
+}
+
+i-tabs.mouseover > .bottom .tabbuttons div.tab-button-wrapper:hover {
+    border-bottom-color: #cbcbcb;
+    border-right-color: #cbcbcb;
+    border-left-color: #cbcbcb;
+}
+
+i-tabs > .bottom .tabscroller {
+    bottom: 3px;
+}
+
+i-tabs > .bottom .tabbuttons {
+    bottom: 6px;
+    left: 6px;
+}
+
+i-tabs > .bottom .tabpages {
+    margin: 0;
+    width: auto;
+    padding-bottom: 2em;
+    height: 100%;
+}
+
+i-tabs > .bottom .tabpages > div {
+    margin-bottom: -1px;
+    border-color: #cbcbcb;
+}
+
+/* menu title */
+div.menu_title {
+    padding: 5px 0;
+}
+
+div.menu_title > h1 {
+    position: relative;
+    padding-left: 16px;
+    font-size: 16px;
+    color: #336699;
+    font-weight: bold;
+}
+
+div.menu_title > h1:before {
+    position: absolute;
+    content: '';
+    width: 14px;
+    height: 14px;
+    left: 0;
+    background-image: url('./img/menu_icon.png');
+    background-position: center;
+    background-size: cover;
+}
+
+/* sub_menu */
+div.sub_menu {
+    padding: 5px 0;
+}
+
+div.sub_menu > h1 {
+    position: relative;
+    padding-left: 16px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* i-edit */
+i-edit, i-maskedit {
+    position: relative;
+    padding: 2px 5px;
+    max-width: 100%;
+    height: 28px;
+    border: 1px solid #cbcbcb;
+    border-radius: 0;
+    background: white;
+    outline: none;
+    box-shadow: none;
+    font-size: 12px;
+    color: #666666;
+}
+
+i-edit .input, i-maskedit .input {
+    padding: 0.2em;
+    width: 100% !important;
+    height: 100%;
+}
+
+i-edit.mouseover, i-maskedit.mouseover, i-edit.focus, i-maskedit.focus {
+    border-color: #cacaca;
+    border: 1px solid #ff8400;
+    box-shadow: none;
+}
+
+i-edit.mouseover .input, i-maskedit.mouseover .input, i-edit.focus .input, i-maskedit.focus .input {
+    padding-right: 1.5em;
+}
+
+i-edit .deletebutton, i-maskedit .deletebutton, i-edit .fa-calendar, i-maskedit .fa-calendar {
+    position: absolute;
+    top: 50%;
+    right: 2px;
+    margin: -0.75em 0 0 0;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5;
+    background: transparent;
+    text-align: center;
+    color: #666;
+}
+
+i-edit.focus .deletebutton, i-maskedit .deletebutton, i-edit.focus .fa-calendar, i-maskedit.focus .fa-calendar, i-edit.mouseover .deletebutton, i-maskedit.mouseover .deletebutton, i-edit.mouseover .fa-calendar, i-maskedit.mouseover .fa-calendar {
+    color: #ff8400;
+}
+
+i-edit[enable="false"], i-maskedit[enable="false"] {
+    color: #cbcbcb;
+    border: 1px solid #cbcbcb;
+}
+
+i-edit[readonly="true"], i-maskedit[readonly="true"] {
+    border: 1px solid #cbcbcb;
+    color: #666;
+    background: #ccc;
+}
+
+i-edit[required="true"], i-maskedit[required="true"] {
+    background-color: #3399cc;
+    color: white;
+    border: 1px solid #1d5ba9;
+}
+
+i-edit .requireflag, i-maskedit .requireflag {
+    color: white;
+}
+
+i-edit[required="true"].focus .deletebutton, i-maskedit[required="true"].focus .deletebutton, i-edit[required="true"].mouseover .deletebutton, i-maskedit[required="true"].mouseover .deletebutton {
+    color: white;
+}
+
+i-edit[required="true"][showCalendarButton="true"] .fa-calendar, i-maskedit[required="true"][showCalendarButton="true"] .fa-calendar {
+    color: white;
+}
+
+/* i-multilineedit */
+i-multilineedit {
+    padding: 2px;
+    max-width: 100%;
+    border: 1px solid #cbcbcb;
+    border-radius: 0;
+    background: white;
+}
+
+i-multilineedit.mouseover, i-multilineedit.focus  {
+    border-color: #cacaca;
+    border: 1px solid #ff8400;
+    box-shadow: none;
+}
+
+i-multilineedit[required="true"] {
+    background-color: #3399cc;
+    color: white;
+    border: 1px solid #1d5ba9;
+}
+
+i-multilineedit[required="true"] .input {
+    background-color: inherit;
+}
+
+i-multilineedit[readonly="true"] {
+    border: 1px solid #cbcbcb;
+    color: #666;
+    background: #ccc;
+}
+
+i-multilineedit[enable="false"] {
+    color: #cbcbcb;
+    border: 1px solid #cbcbcb;
+}
+
+/* i-combo */
+i-combo {
+    position: relative;
+    padding: 2px;
+    max-width: 100%;
+    height: 28px;
+    border: 1px solid #cbcbcb;
+    border-radius: 0;
+    background: white;
+}
+
+i-combo .input {
+    padding: 0.2em;
+    width: calc(100% - 1.5em) !important;
+    height: 100%;
+}
+
+i-combo .trigger {
+    margin: 0;
+    width: 1.5em;
+    text-align: center;
+}
+
+i-combo i.trigger::before {
+    content: '\f107' !important;
+    color: #ff8400;
+    font-weight: bold;
+}
+
+i-combo.mouseover, i-combo.focus {
+    border-color: #ff8400;
+    box-shadow: none;
+    outline: 0;
+}
+
+i-combo[enable="false"] {
+    color: #cbcbcb;
+    border: 1px solid #cbcbcb;
+}
+
+i-combo[enable="false"] i.trigger::before {
+    content: '\f107' !important;
+    color: #ccc;
+    font-weight: bold;
+}
+
+i-combo[readonly="true"], i-combo[enable="false"] {
+    background-color: #f4f4f4;
+}
+
+i-combo[required="true"] .requireflag {
+    display: none;
+}
+
+i-combo[required="true"] {
+    background-color: #3399cc;
+    color: white;
+    border: 1px solid #1d5ba9;
+}
+
+i-combo[required="true"] i.trigger::before {
+    color: white;
+}
+
+/* i-listbox */
+i-listbox {
+    max-width: 100%;
+    height: 28px;
+    border: 1px solid #cbcbcb;
+    border-radius: 0;
+    background: white;
+}
+
+i-listbox.mouseover, i-listbox.focus {
+    border-color: #ff8400;
+    box-shadow: none;
+    outline: 0;
+}
+
+i-listbox li.item:hover {
+    background-color: #3399cc;
+    color: white;
+}
+
+i-listbox[required="true"] {
+    border-color: #1d5ba9;
+    background-color: #3399cc;
+    color: white;
+}
+
+i-listbox[required="true"] li.item:hover {
+    background-color: white;
+    color: #3399cc;
+}
+
+i-listbox .item.selected {
+    background: #1d5ba9;
+}
+
+i-listbox[enable="false"] {
+    color: #cbcbcb;
+    border: 1px solid #cbcbcb;
+}
+/* i-spinner */
+i-spinner {
+    max-width: 100%;
+    height: 28px;
+    border: 1px solid #cbcbcb;
+    border-radius: 0;
+    background: white;
+    color: #666;
+}
+
+i-spinner.mouseover, i-spinner.focus {
+    border-color: #ff8400;
+    box-shadow: none;
+    outline: 0;
+}
+
+/* i-scheduler */
+i-scheduler {
+    border-radius: 0;
+    border: 1px solid #cbcbcb;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+i-scheduler > .title {
+    border-width: 0 0 1px 0;
+    border-color: #1d5ba9;
+    background-color: #3399cc !important;
+    color: white;
+}
+
+i-scheduler .title .format {
+    color: white;
+}
+
+i-scheduler .title .format .yearcombo .year, i-scheduler .title .format .monthcombo .month {
+    color: white !important;
+    background-color: transparent !important;
+}
+
+i-scheduler .title .month-btn {
+    font-weight: bold;
+    color: white !important;
+    background-color: transparent !important;
+}
+
+i-scheduler table {
+    margin: 0;
+}
+
+i-scheduler table .header {
+    font-weight: bold;
+    background-color: white !important;
+    color: black;
+    border-width: 0 0 1px 0;
+    border-color: #cbcbcb;
+}
+
+i-scheduler table .header:first-child {
+    color: red;
+}
+
+i-scheduler table .header:last-child {
+    color: #1d5ba9;
+}
+
+i-scheduler table tr:first-child td, i-scheduler table tr:last-child td {
+    border: none;
+}
+
+i-scheduler table tbody .day {
+    border: none;
+    text-align: center;
+    line-height: 1;
+}
+
+i-scheduler table tbody .selected {
+    background-color: #3399cc !important;
+}
+
+i-scheduler[required="true"] {
+    border-color: #1d5ba9;
+}
+
+i-scheduler div::after {
+    display: none !important;
+}
+
+/* i-calendar */
+i-calendar {
+    border-radius: 0;
+    border: 1px solid #cbcbcb;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+i-calendar > .title {
+    border-width: 0 0 1px 0;
+    border-color: #1d5ba9;
+    background-color: #3399cc !important;
+    color: white;
+}
+
+i-calendar .title .format {
+    color: white;
+}
+
+i-calendar .title .format .yearcombo .year, i-calendar .title .format .monthcombo .month {
+    color: white !important;
+    background-color: transparent !important;
+}
+
+i-calendar .title .month-btn {
+    font-weight: bold;
+    color: white !important;
+    background-color: transparent !important;
+}
+
+i-calendar table {
+    margin: 0;
+}
+
+i-calendar table .header {
+    font-weight: bold;
+    background-color: white !important;
+    color: black;
+    border-width: 0 0 1px 0;
+    border-color: #cbcbcb;
+}
+
+i-calendar table .header:first-child {
+    color: red;
+}
+
+i-calendar table .header:last-child {
+    color: #1d5ba9;
+}
+
+i-calendar table tr:first-child td, i-calendar table tr:last-child td {
+    border: none;
+}
+
+i-calendar table tbody .day {
+    border: none;
+    text-align: center;
+    line-height: 1;
+}
+
+i-calendar table tbody .selected {
+    background-color: #3399cc !important;
+}
+
+i-calendar[required="true"] {
+    border-color: #1d5ba9;
+}
+
+i-calendar div::after {
+    display: none !important;
+}
+
+/* i-check */
+i-check .button {
+    position: relative;
+    top: -1px;
+    font-size: 16px;
+    color: #666;
+}
+
+i-check.mouseover .button, i-check.focus .button {
+    box-shadow: none;
+    outline: 0;
+}
+
+i-check[required="true"].check1 {
+    color: #1d5ba9;
+}
+
+i-check[required="true"].check1 .button {
+    color: #1d5ba9;
+}
+
+i-check.check2 {
+    color: #3399cc;
+}
+
+i-check[enable="false"].check2, i-check[enable="false"].check2 .button {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+i-check.check2 .button {
+    color: #3399cc;
+}
+
+/* i-radio */
+i-radio table {
+    table-layout: auto;
+    width: auto;
+}
+
+i-radio .selected, i-radio .selected {
+    box-shadow: none !important;
+    outline: 0;
+}
+
+i-radio .button {
+    background-color: #3399cc;
+}
+
+i-radio .selected {
+    border-color: #3399cc !important;
+}
+
+i-radio i {
+    position: relative;
+    top: -1px;
+    width: 21px !important;
+    height: 21px;
+    border-radius: 21px;
+    border: 1px solid #cacaca;
+    text-align: center;
+    font-size: 13px;
+}
+
+i-radio i::before {
+    line-height: 20px;
+    color: #3399cc;
+}
+
+i-radio .selected::before {
+    color: white;
+}
+
+i-radio[enable="false"] {
+    color: gray;
+}
+
+i-radio[enable="false"] .button {
+    background-color: gray;
+}
+
+i-radio[enable="false"] i::before {
+    color: gray;
+}
+
+i-radio[enable="false"].selected::before {
+    color: white;
+}
+
+/* i-button */
+i-button {
+    padding: 7px 6px;
+    max-width: 100%;
+    height: 28px;
+    border-radius: 0;
+    border: 1px solid #cbcbcb;
+    cursor: pointer;
+    color: #666;
+}
+
+i-button.mouseover, i-button.focus {
+    box-shadow: none;
+}
+
+i-button.blue_button.mouseover {
+    border: 1px solid #1d5ba9;
+    color: #333;
+    background: white;
+}
+
+i-button.red_button.mouseover {
+    background-color: white;
+    color: #333;
+    border: 1px solid #f44336;
+}
+
+i-button[enable="false"] {
+    background-color: #666 !important;
+    border: 1px solid #666 !important;
+    color: #333 !important;
+}
+
+i-button.blue_button {
+    min-width: 80px;
+    background-color: #1d5ba9;
+    border: 1px solid #1d5ba9;
+    color: white;
+}
+
+i-button.red_button {
+    min-width: 80px;
+    background-color: #f44336;
+    border: 1px solid #f44336;
+    color: white;
+}
+
+/* 조회버튼 */
+
+.inquire_button {
+    background-color: #323334;
+    color: white;
+    border-radius: 3px;
+}
+
+.inquire_button > span {
+    position: relative;
+    padding-left: 20px;
+}
+
+.inquire_button > span::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    position: absolute;    
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    background-image: url('./img/inquire.png');
+    background-position: center;
+    background-size: cover;
+}
+
+/* grid_button */
+.grid_button {
+    height: 21px;
+    border: 0.5px solid #666;
+    border-radius: 3px;
+    background-color: #336699;
+    color: white;
+}
+
+.grid_button.mouseover {
+    background-color: #3399cc;
+}
+
+.grid_button[enable="false"] {
+    border: 1px solid #ccc;
+    background-color: #ccc !important;
+    color:  #333 !important;
+}
+
+/* i-edit, i-maskedit 버튼 이미지 수정 */
+i-edit[showcalendarbutton="true"] > button, i-maskedit[showcalendarbutton="true"] > button {
+    background-image: url('./img/month.png');
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+i-edit[showcalendarbutton="true"] > button::before, i-maskedit[showcalendarbutton="true"] > button::before {
+    content: '';
+}

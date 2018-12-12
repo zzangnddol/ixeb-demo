@@ -1,0 +1,188 @@
+.frame_wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.frame_wrapper section {
+    width: 100%;
+    height: 100%;
+    background-color: #e5e5e5;
+}
+
+.frame_wrapper article {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 30px 50px;
+}
+
+.article_wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pannel_container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pannel_container:first-child {
+    padding-right: 22px;
+}
+
+.pannel_container:last-child {
+    padding-left: 22px;
+}
+
+.article_section {
+    width: 100%;
+    height: 35%;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.section_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 35px;
+    border-bottom: 1px solid #666;
+}
+
+.section_title .title_text {
+    height: 100%;
+    padding: 0 8px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 35px;
+    border-bottom: 3px solid #1d5ba9;
+    box-sizing: border-box;
+}
+
+.section_title i-button {
+    border: none;
+    background: none;
+    font-size: 12px !important;
+    font-weight: bold;
+}
+
+.section_content {
+    flex: 1 1 auto;
+    min-height: 230px;
+    padding-top: 10px;
+}
+
+.section_content > li {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 30px;
+    list-style: disc;
+    list-style-position: inside;
+    font-size: 14px;
+}
+
+.section_content > li > i-text:first-child {
+    height: 100%;
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.section_content > li > i-text:last-child {
+    width: 200px;
+    text-align: right;
+}
+
+.article_section-small {
+    flex: 1 1 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.article_section-small .section_title {
+    border-top: 1px solid #666;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    justify-content: space-between;
+}
+
+.article_section-small .section_title .title_text {
+    position: relative;
+    border: none;
+    padding-left: 30px;
+}
+
+.article_section-small .section_title .title_text::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    background-image: url('./../../themes/indiTexi/img/ico4.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.article_section-small .section_content {
+    height: calc(100% - 40px);
+    min-height: 0;
+}
+
+.article_section-small .section_content > li {
+    width: calc(100% / 3);
+    height: 100%;
+    float: left;
+    border-right: 1px solid #666;
+}
+
+.article_section-small .section_content > li:last-child {
+    border-right: none;
+}
+
+.location_container {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.location_container i-text {
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.location_container i-text span {
+    color: hotpink;
+}
+
+.detail_container {
+    text-align: right;
+}
+
+.image_container {
+    overflow: hidden;
+}
+
+.image_container img {
+    width: 100%;
+    height: 100%;
+}
