@@ -1,4 +1,4 @@
-﻿/* i-tabs */
+/* i-tabs */
 i-tabs, i-tabs * {
     border-collapse: collapse;
     border-spacing: 0;
@@ -371,6 +371,15 @@ i-combo[required="true"] i.trigger::before {
     color: white;
 }
 
+i-listbox[ixebpopup="true"] {
+    font-size: 12px !important;
+    font-weight: bold !important;
+}
+
+i-listbox[ixebpopup="true"] li {
+    padding: 5px 0;
+}
+
 /* i-listbox */
 i-listbox {
     max-width: 100%;
@@ -378,6 +387,8 @@ i-listbox {
     border: 1px solid #cbcbcb;
     border-radius: 0;
     background: white;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 i-listbox.mouseover, i-listbox.focus {
@@ -576,6 +587,25 @@ i-check .button {
     top: -1px;
     font-size: 16px;
     color: #666;
+    background-image: url('./img/check_disabled.png');
+    background-size: 90%;
+    background-position: center;
+}
+
+i-check .button:hover {
+    background-image: url('./img/check_hover.png');
+    background-size: 90%;
+    background-position: center;
+}
+
+i-check[checked="true"] .button {
+    background-image: url('./img/check_checked.png');
+    background-size: 90%;
+    background-position: center;
+}
+
+i-check .button::before {
+    content: '';
 }
 
 i-check.mouseover .button, i-check.focus .button {
@@ -583,30 +613,23 @@ i-check.mouseover .button, i-check.focus .button {
     outline: 0;
 }
 
-i-check[required="true"].check1 {
-    color: #1d5ba9;
-}
-
-i-check[required="true"].check1 .button {
-    color: #1d5ba9;
-}
-
-i-check.check2 {
-    color: #3399cc;
-}
-
-i-check[enable="false"].check2, i-check[enable="false"].check2 .button {
-    color: rgba(0, 0, 0, 0.1);
-}
-
-i-check.check2 .button {
-    color: #3399cc;
+i-check[enable="false"][checked="true"] .button {
+    background-image: url('./img/check_checed_disabled.png');
+    background-size: 90%;
+    background-position: center;
 }
 
 /* i-radio */
 i-radio table {
     table-layout: auto;
     width: auto;
+    border: none;
+    box-shadow: none;
+    outline: 0;
+}
+
+i-radio i::before {
+    content: '' !important;
 }
 
 i-radio .selected, i-radio .selected {
@@ -615,11 +638,27 @@ i-radio .selected, i-radio .selected {
 }
 
 i-radio .button {
-    background-color: #3399cc;
+    background-image: url('./img/radio_disabled.png');
+    background-size: cover;
+    background-position: center;
+}
+
+i-radio .button:hover {
+    background-image: url('./img/radio_hover.png');
+    background-size: cover;
+    background-position: center;
 }
 
 i-radio .selected {
-    border-color: #3399cc !important;
+    background-image: url('./img/radio_checked.png');
+    background-size: cover;
+    background-position: center;
+}
+
+i-radio .selected:hover {
+    background-image: url('./img/radio_checked.png');
+    background-size: cover;
+    background-position: center;
 }
 
 i-radio i {
@@ -627,8 +666,6 @@ i-radio i {
     top: -1px;
     width: 21px !important;
     height: 21px;
-    border-radius: 21px;
-    border: 1px solid #cacaca;
     text-align: center;
     font-size: 13px;
 }
@@ -647,15 +684,15 @@ i-radio[enable="false"] {
 }
 
 i-radio[enable="false"] .button {
-    background-color: gray;
+    background-image: url('./img/radio_disabled.png');
+    background-size: cover;
+    background-position: center;
 }
 
-i-radio[enable="false"] i::before {
-    color: gray;
-}
-
-i-radio[enable="false"].selected::before {
-    color: white;
+i-radio[enable="false"] .selected {
+    background-image: url('./img/radio_checked_disabled.png');
+    background-size: cover;
+    background-position: center;
 }
 
 /* i-button */

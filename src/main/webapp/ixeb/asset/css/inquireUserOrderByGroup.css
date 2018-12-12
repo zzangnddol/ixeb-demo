@@ -29,6 +29,10 @@ section {
     height: 35px;
 }
 
+.table_container > table td > i-edit, .table_container > table td > i-combo {
+    width: 70% !important;
+}
+
 .dummy_div {
     flex: 1 1 auto;
     display: flex;
@@ -45,4 +49,9 @@ section {
     width: 60%;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
+}
+
+/* .sub_menu_title */
+.sub_title_container .menu_title {
+    padding: 10px 0;
 }

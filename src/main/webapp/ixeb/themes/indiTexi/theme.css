@@ -149,7 +149,7 @@ i-scheduler { color: #666; border: 1px solid #999; border-radius: 2px; backgroun
 i-scheduler .title { padding: 0.5em 0.2em; border-width: 1px 0px; border-style: solid; border-color: #999; width: 100%; height: 2.5em; text-align: center; vertical-align: middle; position: relative; }
 i-scheduler .title .format { display: inline; margin-left: 0.2em; margin-right: 0.2em; }
 i-scheduler .selecttodaybutton { width: 2em; border: 1px solid #999; border-radius: 2px; position: absolute; left: 0.3em; padding: 0px 0px 2px 0px; background: #f9f9f9; color: #404040; }
-i-scheduler .selecttodaybutton:before { content: '����'; font-size: smaller; white-space: nowrap; }
+i-scheduler .selecttodaybutton:before { content: '오늘'; font-size: smaller; white-space: nowrap; }
 i-scheduler .moveprevbutton { color: #404040; margin-right: 1em; vertical-align: bottom; }
 i-scheduler .moveprevbutton:hover { color: #45B7FF; }
 i-scheduler .movenextbutton { color: #404040; margin-left: 1em; vertical-align: bottom; }
