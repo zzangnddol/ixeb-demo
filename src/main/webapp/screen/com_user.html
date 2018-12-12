@@ -118,8 +118,10 @@
 
     <i-dataset id="dataset0" serviceId="service_com_user01">
         <header>
-            [{"id":"USER_ID","object":"","type":"","size":"","desc":""},{"id":"CST_CLS","object":"","type":"","size":"","desc":""},{"id":"CST_NM","object":"","type":"","size":"","desc":""},{"id":"EMAIL_ADDR","object":"","type":"","size":"","desc":""},{"id":"TEAM_NM","object":"","type":"","size":"","desc":""},{"id":"USER_NM","object":"","type":"","size":"","desc":""},{"id":"USER_PW","object":"","type":"","size":"","desc":""}]
-        </header><data>                                                                                                                                                                                                                                                                                                                                                                                               </data>
+            [{"id":"USER_ID","object":"","type":"","size":"","desc":""},{"id":"CST_CLS","object":"","type":"","size":"","desc":""},{"id":"CST_NM","object":"","type":"","size":"","desc":""},{"id":"EMAIL_ADDR","object":"","type":"","size":"","desc":""},{"id":"TEAM_NM","object":"","type":"","size":"","desc":""},{"id":"USER_NM","object":"","type":"","size":"","desc":""},{"id":"USER_PW","object":"","type":"","size":"","desc":""},{"id":"CELL_PHONE","object":"edit","type":"","size":"","desc":"item7"}]
+        </header><data>
+                        	[]
+                        </data>
         <i-bind bindtype="recordset" property="" target="grid1" column=""></i-bind>
         <i-bind bindtype="attribute" property="value" target="edit0" column="USER_ID"></i-bind>
         <i-bind bindtype="attribute" property="value" target="cst_Nm" column="CST_NM"></i-bind>
@@ -225,14 +227,14 @@
                             <tr>
                                 <th>전화번호</th>
                                 <td>
-                                    <i-maskedit style="width: 50px; height: 23px;" maxLength="3" minLength="0" minusSign="" pattern="ZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="19"> </i-maskedit> -
-                                    <i-maskedit style="width: 50px; height: 23px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="20"></i-maskedit> -
-                                    <i-maskedit style="width: 50px; height: 23px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="23"></i-maskedit>
+                                    <i-maskedit style="width: 60px; height: 25px;" maxLength="3" minLength="0" minusSign="" pattern="ZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="19"> </i-maskedit> -
+                                    <i-maskedit style="width: 60px; height: 25px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="20"></i-maskedit> -
+                                    <i-maskedit style="width: 60px; height: 25px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false" tabIndex="23"></i-maskedit>
                                     <th>핸드폰</th>
                                     <td>
-                                        <i-maskedit style="width: 50px; height: 23px;" maxLength="3" minLength="0" minusSign="" pattern="ZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false"></i-maskedit> -
-                                        <i-maskedit style="width: 50px; height: 23px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false"></i-maskedit> -
-                                        <i-maskedit style="width: 50px; height: 23px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false"></i-maskedit>
+                                        <i-maskedit style="width: 60px; height: 25px;" maxLength="3" minLength="0" minusSign="" pattern="ZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false"></i-maskedit> -
+                                        <i-maskedit style="width: 60px; height: 25px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false"></i-maskedit> -
+                                        <i-maskedit style="width: 60px; height: 25px;" maxLength="4" minLength="0" minusSign="" pattern="ZZZZ" textAlign="left" type="number" unitDecimal="" unitInsert="false"></i-maskedit>
                                     </td>
                             </tr>
                             <tr>
