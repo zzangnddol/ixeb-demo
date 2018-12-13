@@ -28,7 +28,7 @@
 
         function onclick_btn_exec0() {
             ixeb.comm.transaction({
-                "in": ['dataset0=>' + dataset0.serviceId],
+                // "in": ['dataset0=>' + dataset0.serviceId],
                 "out": [dataset0.serviceId + '=>dataset0'],
                 "url": IXEB_SERVICE_URL
             }).done(function(r) {
@@ -42,7 +42,7 @@
 
         function onclick_btn_exec1() {
             ixeb.comm.transaction({
-                "in": ['dataset1=>' + dataset1.serviceId],
+                // "in": ['dataset1=>' + dataset1.serviceId],
                 "out": [dataset1.serviceId + '=>dataset1'],
                 "url": IXEB_SERVICE_URL
             }).done(function(r) {
@@ -56,7 +56,7 @@
 
         function onclick_btn_exec2() {
             ixeb.comm.transaction({
-                "in": ['dataset2=>' + dataset2.serviceId],
+                // "in": ['dataset2=>' + dataset2.serviceId],
                 "out": [dataset2.serviceId + '=>dataset2'],
                 "url": IXEB_SERVICE_URL
             }).done(function(r) {
@@ -70,7 +70,7 @@
 
         function onclick_btn_exec3() {
             ixeb.comm.transaction({
-                "in": ['dataset3=>' + dataset3.serviceId],
+                // "in": ['dataset3=>' + dataset3.serviceId],
                 "out": [dataset3.serviceId + '=>dataset3'],
                 "url": IXEB_SERVICE_URL
             }).done(function(r) {
@@ -84,7 +84,7 @@
 
         function onclick_btn_exec4() {
             ixeb.comm.transaction({
-                "in": ['dataset4=>' + dataset4.serviceId],
+                // "in": ['dataset4=>' + dataset4.serviceId],
                 "out": [dataset4.serviceId + '=>dataset4'],
                 "url": IXEB_SERVICE_URL
             }).done(function(r) {
@@ -98,7 +98,7 @@
 
         function onclick_btn_exec5() {
             ixeb.comm.transaction({
-                "in": ['dataset5=>' + dataset5.serviceId],
+                // "in": ['dataset5=>' + dataset5.serviceId],
                 "out": [dataset5.serviceId + '=>dataset5'],
                 "url": IXEB_SERVICE_URL
             }).done(function(r) {
@@ -189,22 +189,22 @@
         </div>
         <div class="grid_wrapper">
                 <div class="grid_container">
-                    <i-grid id="grid0" style="width: 100%; height: 100%" columns="[{'fieldName':'ID','name':'ID','colType':'','type':''},{'fieldName':'ORG','name':'ORG','colType':'','type':''},{'fieldName':'NAME','name':'NAME','colType':'','type':''},{'fieldName':'TEL','name':'TEL','colType':'','type':''},{'fieldName':'NOTE','name':'NOTE','colType':'','type':''}]" columncount="5" initrowcount="0" columnlastextend="true" tabIndex="2"></i-grid>
+                    <i-grid id="grid0" style="width: 100%; height: 100%" columns="[{'fieldName':'ID','name':'ID','colType':'','type':''},{'fieldName':'ORG','name':'ORG','colType':'','type':''},{'fieldName':'NAME','name':'NAME','colType':'','type':''},{'fieldName':'TEL','name':'TEL','colType':'','type':''},{'fieldName':'NOTE','name':'NOTE','colType':'','type':''}]" columncount="5" initrowcount="0" columnlastextend="true" tabIndex="2" editable="false"></i-grid>
                 </div> 
                 <div class="grid_container">
-                    <i-grid id="grid1" style="width: 100%; height: 100%" columns="[{'fieldName':'COMPID','name':'COMPID','colType':'','type':'','size':''},{'fieldName':'NAME','name':'NAME','colType':'','type':'','size':''},{'fieldName':'PARENT_ID','name':'PARENT_ID','colType':'','type':'','size':''},{'fieldName':'ID','name':'ID','colType':'','type':'','size':''},{'fieldName':'LEVLCD','name':'LEVLCD','colType':'','type':'','size':''},{'fieldName':'TITEXT1','name':'TITEXT1','colType':'','type':'','size':''},{'fieldName':'TITEXT2','name':'TITEXT2','colType':'','type':'','size':''},{'fieldName':'TITEXT3','name':'TITEXT3','colType':'','type':'','size':''},{'fieldName':'TITEXT4','name':'TITEXT4','colType':'','type':'','size':''},{'fieldName':'TITEXT5','name':'TITEXT5','colType':'','type':'','size':''},{'fieldName':'TITEXT6','name':'TITEXT6','colType':'','type':'','size':''},{'fieldName':'TITEXT7','name':'TITEXT7','colType':'','type':'','size':''},{'fieldName':'TITEXT8','name':'TITEXT8','colType':'','type':'','size':''},{'fieldName':'TITEXT9','name':'TITEXT9','colType':'','type':'','size':''},{'fieldName':'TITEXT10','name':'TITEXT10','colType':'','type':'','size':''},{'fieldName':'TITEXT11','name':'TITEXT11','colType':'','type':'','size':''},{'fieldName':'TITEXT12','name':'TITEXT12','colType':'','type':'','size':''},{'fieldName':'TITEXT13','name':'TITEXT13','colType':'','type':'','size':''},{'fieldName':'TITEXT14','name':'TITEXT14','colType':'','type':'','size':''},{'fieldName':'TITEXT15','name':'TITEXT15','colType':'','type':'','size':''},{'fieldName':'TITEXT16','name':'TITEXT16','colType':'','type':'','size':''},{'fieldName':'TITEXT17','name':'TITEXT17','colType':'','type':'','size':''},{'fieldName':'TITEXT18','name':'TITEXT18','colType':'','type':'','size':''},{'fieldName':'TITEXT19','name':'TITEXT19','colType':'','type':'','size':''},{'fieldName':'TITEXT20','name':'TITEXT20','colType':'','type':'','size':''},{'fieldName':'TITEXT21','name':'TITEXT21','colType':'','type':'','size':''},{'fieldName':'TITEXT22','name':'TITEXT22','colType':'','type':'','size':''},{'fieldName':'TITEXT23','name':'TITEXT23','colType':'','type':'','size':''},{'fieldName':'TITEXT24','name':'TITEXT24','colType':'','type':'','size':''},{'fieldName':'TITEXT25','name':'TITEXT25','colType':'','type':'','size':''},{'fieldName':'TITEXT26','name':'TITEXT26','colType':'','type':'','size':''},{'fieldName':'TITEXT27','name':'TITEXT27','colType':'','type':'','size':''},{'fieldName':'TITEXT30','name':'TITEXT30','colType':'','type':'','size':''},{'fieldName':'FULLTIME_TOTAL','name':'FULLTIME_TOTAL','colType':'','type':'','size':''},{'fieldName':'TOTAL','name':'TOTAL','colType':'','type':'','size':''},{'fieldName':'SORT','name':'SORT','colType':'','type':'','size':''},{'fieldName':'SEQ','name':'SEQ','colType':'','type':'','size':''}]" tabIndex="3"></i-grid>
+                    <i-grid id="grid1" style="width: 100%; height: 100%" columns="[{'fieldName':'COMPID','name':'COMPID','colType':'','type':'','size':''},{'fieldName':'NAME','name':'NAME','colType':'','type':'','size':''},{'fieldName':'PARENT_ID','name':'PARENT_ID','colType':'','type':'','size':''},{'fieldName':'ID','name':'ID','colType':'','type':'','size':''},{'fieldName':'LEVLCD','name':'LEVLCD','colType':'','type':'','size':''},{'fieldName':'TITEXT1','name':'TITEXT1','colType':'','type':'','size':''},{'fieldName':'TITEXT2','name':'TITEXT2','colType':'','type':'','size':''},{'fieldName':'TITEXT3','name':'TITEXT3','colType':'','type':'','size':''},{'fieldName':'TITEXT4','name':'TITEXT4','colType':'','type':'','size':''},{'fieldName':'TITEXT5','name':'TITEXT5','colType':'','type':'','size':''},{'fieldName':'TITEXT6','name':'TITEXT6','colType':'','type':'','size':''},{'fieldName':'TITEXT7','name':'TITEXT7','colType':'','type':'','size':''},{'fieldName':'TITEXT8','name':'TITEXT8','colType':'','type':'','size':''},{'fieldName':'TITEXT9','name':'TITEXT9','colType':'','type':'','size':''},{'fieldName':'TITEXT10','name':'TITEXT10','colType':'','type':'','size':''},{'fieldName':'TITEXT11','name':'TITEXT11','colType':'','type':'','size':''},{'fieldName':'TITEXT12','name':'TITEXT12','colType':'','type':'','size':''},{'fieldName':'TITEXT13','name':'TITEXT13','colType':'','type':'','size':''},{'fieldName':'TITEXT14','name':'TITEXT14','colType':'','type':'','size':''},{'fieldName':'TITEXT15','name':'TITEXT15','colType':'','type':'','size':''},{'fieldName':'TITEXT16','name':'TITEXT16','colType':'','type':'','size':''},{'fieldName':'TITEXT17','name':'TITEXT17','colType':'','type':'','size':''},{'fieldName':'TITEXT18','name':'TITEXT18','colType':'','type':'','size':''},{'fieldName':'TITEXT19','name':'TITEXT19','colType':'','type':'','size':''},{'fieldName':'TITEXT20','name':'TITEXT20','colType':'','type':'','size':''},{'fieldName':'TITEXT21','name':'TITEXT21','colType':'','type':'','size':''},{'fieldName':'TITEXT22','name':'TITEXT22','colType':'','type':'','size':''},{'fieldName':'TITEXT23','name':'TITEXT23','colType':'','type':'','size':''},{'fieldName':'TITEXT24','name':'TITEXT24','colType':'','type':'','size':''},{'fieldName':'TITEXT25','name':'TITEXT25','colType':'','type':'','size':''},{'fieldName':'TITEXT26','name':'TITEXT26','colType':'','type':'','size':''},{'fieldName':'TITEXT27','name':'TITEXT27','colType':'','type':'','size':''},{'fieldName':'TITEXT30','name':'TITEXT30','colType':'','type':'','size':''},{'fieldName':'FULLTIME_TOTAL','name':'FULLTIME_TOTAL','colType':'','type':'','size':''},{'fieldName':'TOTAL','name':'TOTAL','colType':'','type':'','size':''},{'fieldName':'SORT','name':'SORT','colType':'','type':'','size':''},{'fieldName':'SEQ','name':'SEQ','colType':'','type':'','size':''}]" tabIndex="3" editable="false"></i-grid>
                 </div>
                 <div class="grid_container">
-                    <i-grid id="grid2" style="width: 100%; height: 100%" columns="[{'fieldName':'AGENCY','name':'AGENCY','colType':'','type':'','size':''},{'fieldName':'ADDRESSNEW','name':'ADDRESSNEW','colType':'','type':'','size':''},{'fieldName':'ADDRESSOLD','name':'ADDRESSOLD','colType':'','type':'','size':''},{'fieldName':'PURPOSE','name':'PURPOSE','colType':'','type':'','size':''},{'fieldName':'NUMBER1','name':'NUMBER1','colType':'','type':'','size':''},{'fieldName':'PIXELS','name':'PIXELS','colType':'','type':'','size':''},{'fieldName':'SHOOTINGSCENE','name':'SHOOTINGSCENE','colType':'','type':'','size':''},{'fieldName':'DAYOFKEEP','name':'DAYOFKEEP','colType':'','type':'','size':''},{'fieldName':'DATEOFINSTALLATION','name':'DATEOFINSTALLATION','colType':'','type':'','size':''},{'fieldName':'AGENCYPHONENUMBER','name':'AGENCYPHONENUMBER','colType':'','type':'','size':''},{'fieldName':'LATITUDE','name':'LATITUDE','colType':'','type':'','size':''},{'fieldName':'LONGITUDE','name':'LONGITUDE','colType':'','type':'','size':''}]" tabIndex="4"></i-grid>
+                    <i-grid id="grid2" style="width: 100%; height: 100%" columns="[{'fieldName':'AGENCY','name':'AGENCY','colType':'','type':'','size':''},{'fieldName':'ADDRESSNEW','name':'ADDRESSNEW','colType':'','type':'','size':''},{'fieldName':'ADDRESSOLD','name':'ADDRESSOLD','colType':'','type':'','size':''},{'fieldName':'PURPOSE','name':'PURPOSE','colType':'','type':'','size':''},{'fieldName':'NUMBER1','name':'NUMBER1','colType':'','type':'','size':''},{'fieldName':'PIXELS','name':'PIXELS','colType':'','type':'','size':''},{'fieldName':'SHOOTINGSCENE','name':'SHOOTINGSCENE','colType':'','type':'','size':''},{'fieldName':'DAYOFKEEP','name':'DAYOFKEEP','colType':'','type':'','size':''},{'fieldName':'DATEOFINSTALLATION','name':'DATEOFINSTALLATION','colType':'','type':'','size':''},{'fieldName':'AGENCYPHONENUMBER','name':'AGENCYPHONENUMBER','colType':'','type':'','size':''},{'fieldName':'LATITUDE','name':'LATITUDE','colType':'','type':'','size':''},{'fieldName':'LONGITUDE','name':'LONGITUDE','colType':'','type':'','size':''}]" tabIndex="4" editable="false"></i-grid>
                 </div>
                 <div class="grid_container">
-                    <i-grid id="grid3" style="width: 100%; height: 100%" columns="[{'fieldName':'COLUMN1','name':'COLUMN1','colType':'','type':'','size':''},{'fieldName':'COLUMN2','name':'COLUMN2','colType':'','type':'','size':''},{'fieldName':'COLUMN3','name':'COLUMN3','colType':'','type':'','size':''},{'fieldName':'COLUMN4','name':'COLUMN4','colType':'','type':'','size':''},{'fieldName':'COLUMN5','name':'COLUMN5','colType':'','type':'','size':''},{'fieldName':'COLUMN6','name':'COLUMN6','colType':'','type':'','size':''},{'fieldName':'COLUMN7','name':'COLUMN7','colType':'','type':'','size':''},{'fieldName':'COLUMN8','name':'COLUMN8','colType':'','type':'','size':''},{'fieldName':'COLUMN9','name':'COLUMN9','colType':'','type':'','size':''},{'fieldName':'COLUMN10','name':'COLUMN10','colType':'','type':'','size':''},{'fieldName':'COLUMN11','name':'COLUMN11','colType':'','type':'','size':''},{'fieldName':'COLUMN12','name':'COLUMN12','colType':'','type':'','size':''},{'fieldName':'COLUMN13','name':'COLUMN13','colType':'','type':'','size':''},{'fieldName':'COLUMN14','name':'COLUMN14','colType':'','type':'','size':''},{'fieldName':'COLUMN15','name':'COLUMN15','colType':'','type':'','size':''},{'fieldName':'COLUMN16','name':'COLUMN16','colType':'','type':'','size':''},{'fieldName':'COLUMN17','name':'COLUMN17','colType':'','type':'','size':''}]" tabIndex="5"></i-grid>
+                    <i-grid id="grid3" style="width: 100%; height: 100%" columns="[{'fieldName':'COLUMN1','name':'COLUMN1','colType':'','type':'','size':''},{'fieldName':'COLUMN2','name':'COLUMN2','colType':'','type':'','size':''},{'fieldName':'COLUMN3','name':'COLUMN3','colType':'','type':'','size':''},{'fieldName':'COLUMN4','name':'COLUMN4','colType':'','type':'','size':''},{'fieldName':'COLUMN5','name':'COLUMN5','colType':'','type':'','size':''},{'fieldName':'COLUMN6','name':'COLUMN6','colType':'','type':'','size':''},{'fieldName':'COLUMN7','name':'COLUMN7','colType':'','type':'','size':''},{'fieldName':'COLUMN8','name':'COLUMN8','colType':'','type':'','size':''},{'fieldName':'COLUMN9','name':'COLUMN9','colType':'','type':'','size':''},{'fieldName':'COLUMN10','name':'COLUMN10','colType':'','type':'','size':''},{'fieldName':'COLUMN11','name':'COLUMN11','colType':'','type':'','size':''},{'fieldName':'COLUMN12','name':'COLUMN12','colType':'','type':'','size':''},{'fieldName':'COLUMN13','name':'COLUMN13','colType':'','type':'','size':''},{'fieldName':'COLUMN14','name':'COLUMN14','colType':'','type':'','size':''},{'fieldName':'COLUMN15','name':'COLUMN15','colType':'','type':'','size':''},{'fieldName':'COLUMN16','name':'COLUMN16','colType':'','type':'','size':''},{'fieldName':'COLUMN17','name':'COLUMN17','colType':'','type':'','size':''}]" tabIndex="5" editable="false"></i-grid>
                 </div>
                 <div class="grid_container">
-                    <i-grid id="grid4" style="width: 100%; height: 100%" columns="[{'fieldName':'SEQ','name':'SEQ','colType':'','type':''},{'fieldName':'TITLE','name':'TITLE','colType':'','type':''},{'fieldName':'DATEREG','name':'DATEREG','colType':'','type':''},{'fieldName':'CONTENT','name':'CONTENT','colType':'','type':''}]" columncount="4" initrowcount="0" columnlastextend="true" tabIndex="6"></i-grid>
+                    <i-grid id="grid4" style="width: 100%; height: 100%" columns="[{'fieldName':'SEQ','name':'SEQ','colType':'','type':''},{'fieldName':'TITLE','name':'TITLE','colType':'','type':''},{'fieldName':'DATEREG','name':'DATEREG','colType':'','type':''},{'fieldName':'CONTENT','name':'CONTENT','colType':'','type':''}]" columncount="4" initrowcount="0" columnlastextend="true" tabIndex="6" editable="false"></i-grid>
                 </div>
                 <div class="grid_container">
-                    <i-grid id="grid5" style="width: 100%; height: 100%" columns="[{'fieldName':'ID','name':'ID','colType':'','type':''},{'fieldName':'TEXT','name':'TEXT','colType':'','type':''},{'fieldName':'ICON','name':'ICON','colType':'','type':''},{'fieldName':'URL','name':'URL','colType':'','type':''},{'fieldName':'SORT','name':'SORT','colType':'','type':''}]" columncount="5" initrowcount="0" columnlastextend="true" tabIndex="7"></i-grid>
+                    <i-grid id="grid5" style="width: 100%; height: 100%" columns="[{'fieldName':'ID','name':'ID','colType':'','type':''},{'fieldName':'TEXT','name':'TEXT','colType':'','type':''},{'fieldName':'ICON','name':'ICON','colType':'','type':''},{'fieldName':'URL','name':'URL','colType':'','type':''},{'fieldName':'SORT','name':'SORT','colType':'','type':''}]" columncount="5" initrowcount="0" columnlastextend="true" tabIndex="7" editable="false"></i-grid>
                 </div>
         </div>
     </div>

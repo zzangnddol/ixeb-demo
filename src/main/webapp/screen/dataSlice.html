@@ -13,6 +13,7 @@
 	<script type="text/javascript" src="../ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="../ixeb/asset/js/config.js"></script>
     <script type="text/javascript" src="../ixeb/lib/ixebBase.min.js"></script>
+    <script type="text/javascript" src="../common/common.js"></script>
 	<!-- From here, enter your script and style. -->
 	<script type="text/javascript">
         function onclick_btn_exec0() {
@@ -24,7 +25,7 @@
             ixeb.comm.transaction({
                 // "in": ['dataset0=>' + dataset0.serviceId],
                 "out": [dataset0.serviceId + '=>dataset0'],
-                "url": "http://10.1.91.156:8080/ixeb-manager/service.slice.ixeb"
+                "url": IXEB_SERVICE_SLICE_URL
             }).done(function(r) {
                 console.log("Success.");
             }).fail(function(r) {
@@ -62,7 +63,7 @@
             </div>
         </div>
         <div class="grid_container">
-            <i-grid id="grid0" style="width: 100%; height: 100%" columns="[{'fieldName':'FIELD1','name':'FIELD1','colType':'','type':'','colWidth':120},{'fieldName':'FIELD2','name':'FIELD2','colType':'','type':'','colWidth':120},{'fieldName':'FIELD3','name':'FIELD3','colType':'','type':'','colWidth':120},{'fieldName':'FIELD4','name':'FIELD4','colType':'','type':'','colWidth':120},{'fieldName':'FIELD5','name':'FIELD5','colType':'','type':'','colWidth':120},{'fieldName':'FIELD6','name':'FIELD6','colType':'','type':'','colWidth':120},{'fieldName':'FIELD7','name':'FIELD7','colType':'','type':'','colWidth':120},{'fieldName':'FIELD8','name':'FIELD8','colType':'','type':'','colWidth':120},{'fieldName':'FIELD9','name':'FIELD9','colType':'','type':'','colWidth':120},{'fieldName':'FIELD10','name':'FIELD10','colType':'','type':'','colWidth':120}]" columncount="10" initrowcount="0" tabIndex="1"></i-grid>
+            <i-grid id="grid0" style="width: 100%; height: 100%" columns="[{'fieldName':'FIELD1','name':'FIELD1','colType':'','type':'','colWidth':120},{'fieldName':'FIELD2','name':'FIELD2','colType':'','type':'','colWidth':120},{'fieldName':'FIELD3','name':'FIELD3','colType':'','type':'','colWidth':120},{'fieldName':'FIELD4','name':'FIELD4','colType':'','type':'','colWidth':120},{'fieldName':'FIELD5','name':'FIELD5','colType':'','type':'','colWidth':120},{'fieldName':'FIELD6','name':'FIELD6','colType':'','type':'','colWidth':120},{'fieldName':'FIELD7','name':'FIELD7','colType':'','type':'','colWidth':120},{'fieldName':'FIELD8','name':'FIELD8','colType':'','type':'','colWidth':120},{'fieldName':'FIELD9','name':'FIELD9','colType':'','type':'','colWidth':120},{'fieldName':'FIELD10','name':'FIELD10','colType':'','type':'','colWidth':120}]" columncount="10" initrowcount="0" tabIndex="1" editable="false"></i-grid>
         </div>
     </div>
 </body>
