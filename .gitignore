@@ -5,3 +5,6 @@ target/
 .classpath
 .project
 .settings/
+
+# iXeb Studio
+ixebstudio.proj
