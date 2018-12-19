@@ -13,6 +13,7 @@
     <script type="text/javascript" src="./ixeb/ext/jquery/2.2.1/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="./ixeb/asset/js/config.js"></script>
 	<script type="text/javascript" src="./ixeb/lib/ixebBase.min.js"></script>
+	<script type="text/javascript" src="./common/common.js"></script>
 	<!-- From here, enter your script and style. -->
     <script type="text/javascript">
         function onAfterInitScreen_body() {
@@ -61,123 +62,163 @@
             $('.aside_menu').css('display', 'block');
         });
 
+        function setTabMenu(listText, url){
+            var appendingPage;
+            $.get(url, function(html){
+                var setHTML = '';
+                var openTabCheck = null;
+                $(html).each(function(index, ele){
+                    if(ele.nodeName === 'DIV' || ele.nodeName === 'I-DATASET' || (ele.nodeName === 'SCRIPT' && !$(ele).attr('type'))){
+                        setHTML += ele.outerHTML;
+                    }
+                })
+                
+                appendingPage = '<i-tabpage title="' + listText + '">';
+                appendingPage += '<div class="root_container">';
+                appendingPage += '<div class="super_root">시스템 관리</div>';
+                appendingPage += '<div class="right_arrow">></div>';
+                appendingPage += '<div class="child_root">'+ listText +'</div>';
+                appendingPage += '</div>';
+                appendingPage += setHTML;
+                appendingPage += '</i-tabpage>';
+                
+                $(tabs0).find('.tab-button-wrapper').each(function(i,e){
+                    if(e.innerText === listText) {
+                        //alert('해당 화면은 선택되어있습니다.');
+                        openTabCheck = true;
+                        tabs0.setActiveTabpage(i);
+                    };
+                });
+                if(openTabCheck) return true;
+                tabs0.appendTabpage(appendingPage, true);
+               
+            });
+        }
+        
         $('.list_container > ul > li', this).click(function() {
             var listText = $(this).text();
             var tabDisplay = $('.tab_container').css('display');
             if (tabDisplay === 'none') {
                 $('.tab_container').css('display', 'block');
             }
-
             switch(listText) {
                 case '공통코드관리':
-                    var appendingPage = '<i-tabpage title="' + listText + '">';
-                        appendingPage += '<div class="root_container">';
-                        appendingPage += '<div class="super_root">권한관리</div>';
-                        appendingPage += '<div class="right_arrow">></div>';
-                        appendingPage += '<div class="child_root">공통코드관리</div>';
-                        appendingPage += '</div>';
-                        appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/COM_code.html">';
-                        appendingPage += '</i-tabpage>';
-
-                    tabs0.appendTabpage(appendingPage, true);
+                    // var appendingPage = '<i-tabpage title="' + listText + '">';
+                    //     appendingPage += '<div class="root_container">';
+                    //     appendingPage += '<div class="super_root">권한관리</div>';
+                    //     appendingPage += '<div class="right_arrow">></div>';
+                    //     appendingPage += '<div class="child_root">공통코드관리</div>';
+                    //     appendingPage += '</div>';
+                    //     appendingPage += dataInclude($(this), function(html){ return html; });
+                    //     //appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/COM_code.html">';
+                    //     appendingPage += '</i-tabpage>';
+                    setTabMenu(listText, './screen/COM_code.html');
                     break;
                 case '그룹권한등록':
-                    var appendingPage = '<i-tabpage title="' + listText + '">';
-                        appendingPage += '<div class="root_container">';
-                        appendingPage += '<div class="super_root">그룹권한등록</div>';
-                        appendingPage += '<div class="right_arrow">></div>';
-                        appendingPage += '<div class="child_root">그룹권한등록</div>';
-                        appendingPage += '</div>';
-                        appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/registerPermissionbyGroup.html">';
-                        appendingPage += '</i-tabpage>';
+                    // var appendingPage = '<i-tabpage title="' + listText + '">';
+                    //     appendingPage += '<div class="root_container">';
+                    //     appendingPage += '<div class="super_root">그룹권한등록</div>';
+                    //     appendingPage += '<div class="right_arrow">></div>';
+                    //     appendingPage += '<div class="child_root">그룹권한등록</div>';
+                    //     appendingPage += '</div>';
+                    //     appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/registerPermissionbyGroup.html">';
+                    //     appendingPage += '</i-tabpage>';
 
-                    tabs0.appendTabpage(appendingPage, true);
+                    // tabs0.appendTabpage(appendingPage, true);
+                    setTabMenu(listText, './screen/registerPermissionbyGroup.html');
                     break;
                 case '그룹별사용자조회':
-                    var appendingPage = '<i-tabpage title="' + listText + '">';
-                        appendingPage += '<div class="root_container">';
-                        appendingPage += '<div class="super_root">그룹별사용자조회</div>';
-                        appendingPage += '<div class="right_arrow">></div>';
-                        appendingPage += '<div class="child_root">그룹별사용자조회</div>';
-                        appendingPage += '</div>';
-                        appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/inquireUserOrderByGroup.html">';
-                        appendingPage += '</i-tabpage>';
+                    // var appendingPage = '<i-tabpage title="' + listText + '">';
+                    //     appendingPage += '<div class="root_container">';
+                    //     appendingPage += '<div class="super_root">그룹별사용자조회</div>';
+                    //     appendingPage += '<div class="right_arrow">></div>';
+                    //     appendingPage += '<div class="child_root">그룹별사용자조회</div>';
+                    //     appendingPage += '</div>';
+                    //     appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/inquireUserOrderByGroup.html">';
+                    //     appendingPage += '</i-tabpage>';
 
-                    tabs0.appendTabpage(appendingPage, true);
+                    // tabs0.appendTabpage(appendingPage, true);
+                    setTabMenu(listText, './screen/inquireUserOrderByGroup.html');
                     break;
 
                 case '대량데이터슬라이스':
-                    var appendingPage = '<i-tabpage title="' + listText + '">';
-                        appendingPage += '<div class="root_container">';
-                        appendingPage += '<div class="super_root">대량데이터슬라이스</div>';
-                        appendingPage += '<div class="right_arrow">></div>';
-                        appendingPage += '<div class="child_root">대량데이터슬라이스</div>';
-                        appendingPage += '</div>';
-                        appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/dataSlice.html">';
-                        appendingPage += '</i-tabpage>';
+                    // var appendingPage = '<i-tabpage title="' + listText + '">';
+                    //     appendingPage += '<div class="root_container">';
+                    //     appendingPage += '<div class="super_root">대량데이터슬라이스</div>';
+                    //     appendingPage += '<div class="right_arrow">></div>';
+                    //     appendingPage += '<div class="child_root">대량데이터슬라이스</div>';
+                    //     appendingPage += '</div>';
+                    //     appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/dataSlice.html">';
+                    //     appendingPage += '</i-tabpage>';
 
-                    tabs0.appendTabpage(appendingPage, true);
+                    // tabs0.appendTabpage(appendingPage, true);
+                    setTabMenu(listText, './screen/dataSlice.html');
                     break;
                 case '멀티트랜젝션':
-                    var appendingPage = '<i-tabpage title="' + listText + '">';
-                        appendingPage += '<div class="root_container">';
-                        appendingPage += '<div class="super_root">멀티트랜젝션</div>';
-                        appendingPage += '<div class="right_arrow">></div>';
-                        appendingPage += '<div class="child_root">멀티트랜젝션</div>';
-                        appendingPage += '</div>';
-                        appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/multiTransaction.html">';
-                        appendingPage += '</i-tabpage>';
+                    // var appendingPage = '<i-tabpage title="' + listText + '">';
+                    //     appendingPage += '<div class="root_container">';
+                    //     appendingPage += '<div class="super_root">멀티트랜젝션</div>';
+                    //     appendingPage += '<div class="right_arrow">></div>';
+                    //     appendingPage += '<div class="child_root">멀티트랜젝션</div>';
+                    //     appendingPage += '</div>';
+                    //     appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/multiTransaction.html">';
+                    //     appendingPage += '</i-tabpage>';
 
-                    tabs0.appendTabpage(appendingPage, true);
+                    // tabs0.appendTabpage(appendingPage, true);
+                    setTabMenu(listText, './screen/multiTransaction.html');
                     break;
 
                 case '메뉴등록':
-                    var appendingPage = '<i-tabpage title="' + listText + '">';
-                        appendingPage += '<div class="root_container">';
-                        appendingPage += '<div class="super_root">메뉴등록</div>';
-                        appendingPage += '<div class="right_arrow">></div>';
-                        appendingPage += '<div class="child_root">메뉴등록</div>';
-                        appendingPage += '</div>';
-                        appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/com_menu.html">';
-                        appendingPage += '</i-tabpage>';
+                    // var appendingPage = '<i-tabpage title="' + listText + '">';
+                    //     appendingPage += '<div class="root_container">';
+                    //     appendingPage += '<div class="super_root">메뉴등록</div>';
+                    //     appendingPage += '<div class="right_arrow">></div>';
+                    //     appendingPage += '<div class="child_root">메뉴등록</div>';
+                    //     appendingPage += '</div>';
+                    //     appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/com_menu.html">';
+                    //     appendingPage += '</i-tabpage>';
 
-                    tabs0.appendTabpage(appendingPage, true);
+                    // tabs0.appendTabpage(appendingPage, true);
+                    setTabMenu(listText, './screen/com_menu.html');
                     break;
                 case '사용자별권한등록':
-                    var appendingPage = '<i-tabpage title="' + listText + '">';
-                        appendingPage += '<div class="root_container">';
-                        appendingPage += '<div class="super_root">사용자별권한등록</div>';
-                        appendingPage += '<div class="right_arrow">></div>';
-                        appendingPage += '<div class="child_root">사용자별권한등록</div>';
-                        appendingPage += '</div>';
-                        appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/registerPermissionsByUser.html">';
-                        appendingPage += '</i-tabpage>';
+                    // var appendingPage = '<i-tabpage title="' + listText + '">';
+                    //     appendingPage += '<div class="root_container">';
+                    //     appendingPage += '<div class="super_root">사용자별권한등록</div>';
+                    //     appendingPage += '<div class="right_arrow">></div>';
+                    //     appendingPage += '<div class="child_root">사용자별권한등록</div>';
+                    //     appendingPage += '</div>';
+                    //     appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/registerPermissionsByUser.html">';
+                    //     appendingPage += '</i-tabpage>';
 
-                    tabs0.appendTabpage(appendingPage, true);
+                    // tabs0.appendTabpage(appendingPage, true);
+                    setTabMenu(listText, './screen/registerPermissionsByUser.html');
                     break;
                 case '사용자관리':
-                    var appendingPage = '<i-tabpage title="' + listText + '">';
-                        appendingPage += '<div class="root_container">';
-                        appendingPage += '<div class="super_root">사용자관리</div>';
-                        appendingPage += '<div class="right_arrow">></div>';
-                        appendingPage += '<div class="child_root">사용자관리</div>';
-                        appendingPage += '</div>';
-                        appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/com_user.html">';
-                        appendingPage += '</i-tabpage>';
+                    // var appendingPage = '<i-tabpage title="' + listText + '">';
+                    //     appendingPage += '<div class="root_container">';
+                    //     appendingPage += '<div class="super_root">사용자관리</div>';
+                    //     appendingPage += '<div class="right_arrow">></div>';
+                    //     appendingPage += '<div class="child_root">사용자관리</div>';
+                    //     appendingPage += '</div>';
+                    //     appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/com_user.html">';
+                    //     appendingPage += '</i-tabpage>';
 
-                    tabs0.appendTabpage(appendingPage, true);
+                    // tabs0.appendTabpage(appendingPage, true);
+                    setTabMenu(listText, './screen/com_user.html');
                     break;
                 case '프로그램등록':
-                    var appendingPage = '<i-tabpage title="' + listText + '">';
-                        appendingPage += '<div class="root_container">';
-                        appendingPage += '<div class="super_root">프로그램등록</div>';
-                        appendingPage += '<div class="right_arrow">></div>';
-                        appendingPage += '<div class="child_root">프로그램등록</div>';
-                        appendingPage += '</div>';
-                        appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/com_pgmui.html">';
-                        appendingPage += '</i-tabpage>';
+                    // var appendingPage = '<i-tabpage title="' + listText + '">';
+                    //     appendingPage += '<div class="root_container">';
+                    //     appendingPage += '<div class="super_root">프로그램등록</div>';
+                    //     appendingPage += '<div class="right_arrow">></div>';
+                    //     appendingPage += '<div class="child_root">프로그램등록</div>';
+                    //     appendingPage += '</div>';
+                    //     appendingPage += '<iframe style="width: 100%; height: calc(100% - 30px);" src="./screen/com_pgmui.html">';
+                    //     appendingPage += '</i-tabpage>';
 
-                    tabs0.appendTabpage(appendingPage, true);
+                    // tabs0.appendTabpage(appendingPage, true);
+                    setTabMenu(listText, './screen/com_pgmui.html');
                     break;
                 default:
                     break;
@@ -323,19 +364,20 @@
             <article>
                 <i-panel style="width: 100%; height: 100%;" url="./screen/main.html"></i-panel>
                 <div class="tab_container">
-                    <i-tabs style="width:100%; height:100%;" id="tabs0" tabCloseButton="true" onchange="onchange_tabs0(arguments[0])" onTabpageClosed="onTabpageClosed_tabs0(arguments[0])">
+                    <i-tabs style="width:100%; height:100%;" id="tabs0" tabCloseButton="true" onTabpageClosed="onTabpageClosed_tabs0(arguments[0])">
                     </i-tabs>
                 </div>
             </article>
+            <footer>
+                <div class="root_container">
+                    <div class="status">정상처리 되었습니다.</div>
+                    <div class="super_root">권한관리</div>
+                    <div class="right_arrow">></div>
+                    <div class="child_root">메뉴등록관리</div>
+                </div>
+            </footer>
         </section>
-        <footer>
-            <div class="root_container">
-                <div class="status">정상처리 되었습니다.</div>
-                <div class="super_root">권한관리</div>
-                <div class="right_arrow">></div>
-                <div class="child_root">메뉴등록관리</div>
-            </div>
-        </footer>
+        
     </div>
 </body>
 </html>

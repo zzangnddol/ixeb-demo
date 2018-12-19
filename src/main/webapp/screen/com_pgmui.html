@@ -50,7 +50,10 @@
                 // console.log("always");
             });
         }
-    
+        function onloadcomplete_dataset0(e, dataset) {
+            //TODO:
+            onDataCellClicked_grid0();
+        }
    
         function onchange_grid1(e) {
             //TODO:
@@ -198,63 +201,6 @@
 
         
     </script>
-    <style>
-        th {
-            text-align: left;
-        }
-        
-        .container_top {
-            width: 100%;
-            height: 35%;
-        }
-        
-        .container_bottom {
-            width: 100%;
-            margin-top: 26px;
-            height: calc(65% - 26px);
-            float: left;
-        }
-        
-        .grid0_container,
-        .grid1_container {
-            width: 50%;
-            height: 100%;
-            float: left;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-        
-        .grid_wrapper {
-            float: left;
-            width: 55%;
-            height: 60%;
-            padding-left: 5px;
-            padding-right: 5px;
-            padding-top: 5px;
-        }
-        
-        .table_wrapper {
-            float: left;
-            width: 45%;
-            height: 100%;
-            padding: 5px 5px 5px 5px;
-        }
-        h1 {
-            font-weight: bold;
-        }
-        i-combo, i-edit, i-spinner {
-            
-            width: 70%;
-        }
-        
-        .table_container {
-            padding-top: 5px;
-        }
-
-        span.ui-spinner {
-            width: 100% !important;
-        }
-    </style>
     <!-- stylesheet"-->
     <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/reset.css">
     <link rel="stylesheet" type="text/css" href="../ixeb/themes/indiTexi/control.css">
@@ -291,8 +237,8 @@
     </i-dataset>
 </head>
 
-<body onInitScreen="onInitScreen_body()">
-    <div class="wrapper">
+<body>
+    <div class="wrapper com_pgmui" onInitScreen="onInitScreen_body()">
         <div class="main_title_container">
             <div class="menu_title">
                 <h1>프로그램등록</h1>
@@ -304,7 +250,7 @@
                 <i-button style="margin-right: 5px;" text="저장" class="blue_button" tabIndex="3" id="button2" onclick="onclick_button2(arguments[0])"></i-button>
             </div>
         </div>
-        <div class="" style="height:calc(100% - 33px)">
+        <div class="" style="height:calc(100% - 80px)">
             <div class="container_top">
                 <div class="grid0_container">
                     <i-grid style="width: 100%; height: 100%" columns="[{'name':'시스템코드','colWidth':180,'fieldName':'MENU_ID','textAlignment':'center'},{'name':'시스템명','colWidth':380,'fieldName':'MENU_BM','textAlignment':'center'}]" id="grid0" columncount="2" initrowcount="0" sumrowshow="none" columnlastextend="true" columnmove="true" columnresize="true" statebar="false" rowautocount="false" strippedpattern="true" sorted="true" griditem="[]" tabIndex="4" onDataCellClicked="onDataCellClicked_grid0(arguments[0], arguments[1], arguments[2])" editable="false" dataFontSize="13" colHeadFontSize="13"></i-grid>

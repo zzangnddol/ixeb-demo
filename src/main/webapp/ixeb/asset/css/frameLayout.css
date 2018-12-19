@@ -81,7 +81,7 @@ header > div:first-child {
 section {
     position: relative;
     width: 100%;
-    height: calc(100% - 89px);
+    height: calc(100% - 57px);
 }
 
 section > aside {
@@ -394,7 +394,9 @@ section > article {
 }
 
 footer {
-    position: relative;
+    position: absolute;
+    bottom:0;
+    width:100%;
     height: 33px;
     padding: 0 10px;
     border-top: 1px solid #333;
@@ -406,7 +408,7 @@ footer {
     height: 33px;
     line-height: 33px;
     top: 0;
-    left: 10px;
+    left: 265px;
     bottom: 0;
 }
 
